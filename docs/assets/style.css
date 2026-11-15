@@ -151,7 +151,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .tl-nav button:hover{border-color:var(--ink)}
 
 /* 地圖 */
-#map-el{height:520px;border:1px solid var(--line);z-index:1;background:var(--sheet)}
+#map-el{height:620px;border:1px solid var(--line);z-index:1;background:var(--sheet)}
 #map-el .leaflet-tile-pane{filter:grayscale(1) contrast(.9) brightness(1.08)}
 .leaflet-popup-content{font-family:var(--sans);font-size:14.5px;line-height:1.7;color:var(--ink)}
 .leaflet-popup-content b{font-family:var(--kai);font-size:17px}
@@ -261,7 +261,7 @@ aside dd{margin:0}
   .page-h.ticket-h{grid-template-columns:64px minmax(0,1fr)}
   .ticket-h .ph-body{padding:16px 18px}
   .tl-nav{order:3}
-  #map-el{height:400px}
+  #map-el{height:480px}
   #graph-el{height:460px}
   .lib .hide-m{display:none}
   .log-row{grid-template-columns:6em 1fr}

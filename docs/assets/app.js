@@ -198,7 +198,7 @@ function drawTimeline() {
 
 function drawMap() {
   if (!window.L || !W.places.length) return;
-  const m = L.map("map-el", { scrollWheelZoom: false });
+  const m = L.map("map-el", { scrollWheelZoom: false, zoomSnap: 0.25, zoomDelta: 0.5 });
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18,
   }).addTo(m);
@@ -207,7 +207,7 @@ function drawMap() {
     L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "", html: `<div class="pin" data-cat="${catKey(t?.category)}"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] }), title: p.name })
       .addTo(m).bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}<br>${t ? "故事：" + pageLink(p.topic) + "<br>" : ""}<span class="small">出處：${refLink(p.source)}</span>`);
   });
-  m.fitBounds(W.places.map(p => [p.lat, p.lng]), { padding: [30, 30] });
+  m.fitBounds(W.places.map(p => [p.lat, p.lng]), { padding: [24, 24], maxZoom: 11 });
   live.map = m;
 }
 
