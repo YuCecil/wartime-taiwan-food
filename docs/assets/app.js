@@ -36,8 +36,9 @@ function setNav(key) {
 
 /* ---------- 圖表 ---------- */
 function chartBlock(s, inPage) {
+  const h = inPage ? "h3" : "h2";
   return `<figure class="chart" data-chart="${esc(s.id)}" style="margin-left:0;margin-right:0">
-    <h3>${esc(s.title)}</h3><div class="u">單位：${esc(s.unit)}</div>
+    <${h}>${esc(s.title)}</${h}><div class="u">單位：${esc(s.unit)}</div>
     <div class="cv"><canvas role="img" aria-label="${esc(s.title)}"></canvas></div>
     <figcaption class="note">${esc(s.note || "")} 出處：${refLink(s.source)}${!inPage && s.topic ? `。故事：${pageLink(s.topic)}` : ""}</figcaption></figure>`;
 }
@@ -198,7 +199,7 @@ function debates() {
   setNav("debates");
   app.innerHTML = `<section class="sec" style="border:0"><h1>研究爭論</h1>
     <p class="lead">同一件事，研究者有不同的解讀。這些分歧本身就是值得知道的事。</p>
-    ${W.debates.map(d => `<div class="debate"><h3>${esc(d.question)}</h3><div class="pos">${d.positions.map(p => `<div>${esc(p.claim)}<small>${refLink(p.source)}</small></div>`).join("")}</div>${d.topic ? `<p class="small">相關故事：${pageLink(d.topic)}</p>` : ""}</div>`).join("")}</section>`;
+    ${W.debates.map(d => `<div class="debate"><h2>${esc(d.question)}</h2><div class="pos">${d.positions.map(p => `<div>${esc(p.claim)}<small>${refLink(p.source)}</small></div>`).join("")}</div>${d.topic ? `<p class="small">相關故事：${pageLink(d.topic)}</p>` : ""}</div>`).join("")}</section>`;
   scrollTo(0, 0);
 }
 function graph() {
@@ -245,12 +246,6 @@ function page(p) {
       <dt>類型</dt><dd>${esc(p.kind)}</dd><dt>讀到</dt><dd><span class="depth ${esc(p.depth)}">${esc(p.depth)}</span></dd>
       <dt>可信度</dt><dd>${esc(p.reliability)}</dd><dt>取得</dt><dd>${esc(p.access)}</dd></dl>
       ${p.url && p.url !== "無" ? `<p style="margin:10px 0 0"><a href="${esc(p.url)}" target="_blank" rel="noopener">打開原始頁面</a></p>` : ""}</div>`;
-  } else if (p.type !== "overview") {
-    aside += `<div class="box"><h2>這一頁</h2><dl>
-      ${p.period ? `<dt>時期</dt><dd>${p.period.join("–")}</dd>` : ""}
-      ${p.kind ? `<dt>類型</dt><dd>${esc(p.kind)}</dd>` : ""}
-      ${p.sources ? `<dt>根據</dt><dd>${p.sources.length} 份資料</dd>` : ""}
-      ${p.updated ? `<dt>更新</dt><dd>${esc(p.updated)}</dd>` : ""}</dl></div>`;
   }
   const evs = W.timeline.filter(e => e.topic === p.id).sort((a, b) => String(a.date).localeCompare(String(b.date)));
   if (evs.length) aside += `<div class="box"><h2>這個故事的時間軸</h2>${evs.map(e => `<div class="mini-ev"><b>${esc(e.date)}</b><span>${esc(e.title)}</span></div>`).join("")}</div>`;
@@ -261,12 +256,14 @@ function page(p) {
   if (relT.length) aside += `<div class="box"><h2>${p.type === "source" ? "用在這些故事" : "相關故事與名詞"}</h2>${relT.map(id => `<a href="#/p/${id}">${esc(byId[id].title)}</a>`).join("")}</div>`;
   if (relS.length && p.type !== "topic") aside += `<div class="box"><h2>相關資料</h2>${relS.map(id => `<a href="#/p/${id}">${esc(shortName(byId[id]))}</a>`).join("")}</div>`;
 
-  const sub = p.type === "source" ? `${esc(p.author)}，${esc(p.year)}。${esc(p.venue)}` : esc(p.summary || "");
+  const facts = [p.period ? p.period.join("–") : "", p.kind || "", p.sources ? `根據 ${p.sources.length} 份資料` : "", p.updated ? `更新於 ${p.updated}` : ""].filter(Boolean).map(esc).join("，");
+  const sub = p.type === "source" ? `${esc(p.author)}，${esc(p.year)}。${esc(p.venue)}` : `${esc(p.summary || "")}${facts && p.type !== "overview" ? `<br><span class="small">${facts}</span>` : ""}`;
   app.innerHTML = `<div class="page"><div>
     <div class="crumb"><a href="#/">首頁</a>　${TYPE_NAME[p.type] || ""}</div>
     <header class="page-h"><h1>${esc(p.title)}</h1>${sub ? `<div class="meta">${sub}</div>` : ""}</header>
     <article class="md">${renderMd(p.body)}</article>
-  </div><aside>${aside}</aside></div>`;
+    ${aside ? `<aside class="page-info" aria-label="這一頁的相關資訊">${aside}</aside>` : ""}
+  </div></div>`;
   mountCharts(app);
   requestAnimationFrame(() => scrollTo(0, 0));
 }
