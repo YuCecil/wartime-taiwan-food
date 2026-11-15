@@ -46,7 +46,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 
 /* 頂欄 */
 .topbar{position:sticky;top:0;z-index:1000;background:var(--paper);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;padding:14px 20px;flex-wrap:wrap}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;padding:14px 20px;flex-wrap:wrap}
 .logo{font-family:var(--kai);font-weight:700;font-size:23px;color:var(--ink);text-decoration:none;letter-spacing:.06em}
 .logo:hover{color:var(--ink)}
 .nav{display:flex;gap:2px 18px;flex-wrap:wrap}
@@ -292,3 +292,12 @@ aside dd{margin:0}
 @media (max-width:640px){.tl-item{grid-template-columns:minmax(0,1fr)}}
 .tickets .tk-body{min-height:212px}
 @media (max-width:640px){.tickets .tk-body{min-height:0}}
+
+/* 左上角：配給印章 + 站名 */
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo-seal{display:grid;place-items:center;width:38px;height:38px;background:var(--stamp);color:#F6F7F3;font-family:var(--kai);font-weight:700;font-size:24px;line-height:1;border-radius:4px;transform:rotate(-6deg);box-shadow:inset 0 0 0 2px #F6F7F3,inset 0 0 0 3px var(--stamp);letter-spacing:0;transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.logo:hover .logo-seal{transform:rotate(0)}
+.logo-t{display:flex;flex-direction:column;line-height:1.15}
+.logo-t b{font-size:23px;letter-spacing:.06em}
+.logo-t small{font-family:var(--kai);font-weight:400;font-size:13px;color:var(--muted);letter-spacing:.12em;margin-top:2px}
+@media (prefers-reduced-motion:reduce){.logo-seal{transition:none}}
