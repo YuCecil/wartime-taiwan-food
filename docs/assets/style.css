@@ -117,6 +117,9 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .stub::before{top:-9px}.stub::after{bottom:-9px}
 .stub .ch{font-family:var(--kai);font-weight:700;font-size:34px;line-height:1;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:2px solid var(--c);border-radius:50%}
 .stub .no{font-family:var(--kai);font-size:13px;font-variant-numeric:tabular-nums;writing-mode:vertical-rl;letter-spacing:.1em}
+.tk-img{grid-column:1/-1;display:block;overflow:hidden;border-bottom:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+.tk-img img{display:block;width:100%;aspect-ratio:5/2;object-fit:cover;filter:saturate(.9)}
+.ticket .stub::before{top:-9px}
 .tk-body{padding:16px 16px 14px 18px;display:flex;flex-direction:column}
 .tk-body .toc-t{font-family:var(--kai);font-size:20.5px;font-weight:700;line-height:1.4;margin:0;text-wrap:pretty}
 .tk-body p{margin:6px 0 10px;font-size:15.5px;line-height:1.7}
@@ -198,7 +201,9 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .ticket-h .ph-body{padding:22px 26px 22px}
 .page-h.ticket-h .meta{color:var(--ink)}
 .page-h.ticket-h .meta .small{color:var(--c)}
-.page[data-cat] .md h2{color:var(--c)}
+.page[data-cat] .lede{margin:22px 0 6px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.lede p{font-family:var(--kai);font-weight:700;font-size:21px;line-height:1.75;margin:0;color:var(--ink)}
+.md h2{color:var(--c)}
 .page[data-cat] .md h2::after{content:"";display:block;width:2.2em;height:3px;background:var(--t);margin-top:6px}
 .page-h h1{font-size:38px;letter-spacing:.03em}
 .page-h .meta{color:var(--muted);margin-top:10px;font-size:15.5px}

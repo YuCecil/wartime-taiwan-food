@@ -106,6 +106,7 @@ function home(anchor) {
   const c = W.counts;
   let no = 0;
   const item = t => { no++; const k = CATS[t.category] || CATS["制度"]; return `<li><a class="ticket" data-cat="${k.key}" href="#/p/${t.id}">
+    ${t.image ? `<span class="tk-img"><img src="assets/img/${esc(t.image)}" alt="" loading="lazy" decoding="async"></span>` : ""}
     <span class="stub" aria-hidden="true"><span class="ch">${k.ch}</span><span class="no">No.${String(no).padStart(2, "0")}</span></span>
     <span class="tk-body"><h4 class="toc-t">${phrase(t.title)}</h4><p>${esc(t.summary)}</p>
     <span class="tk-meta">${esc(t.category)}・${(t.period || []).join("–")}・${(t.sources || []).length} 份資料</span></span></a></li>`; };
@@ -116,28 +117,25 @@ function home(anchor) {
   <section class="hero">
     <div>
       <h1>戰爭，是從<br>餐桌開始的。</h1>
-      <p class="intro">1937 到 1949 年，臺灣人吃的米要配給，豬肉十天才分到一次，黑市就藏在龍山寺前。這裡把 ${c.sources} 份研究與史料交給 AI 讀完，整理成 ${c.topics} 個故事，每一句話都標出處。</p>
       <a class="go" href="#/#stories">從故事開始讀</a>
       <img class="mascot mascot-hero" src="assets/img/mascot.png" alt="番薯仔：戴斗笠、提竹籃的番薯，本站的導覽員" width="382" height="520">
     </div>
     <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
       <div class="pb-head"><b>米穀通帳</b><span>本站整理，非原件</span></div>
       ${rows.map(s => `<a class="pb-row" data-cat="${catKey(catOf(s.topic))}" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
-      <div class="pb-foot">每一行都連到對應的故事，數字的出處寫在故事裡。</div>
+      <div class="pb-foot" aria-hidden="true"></div>
       <div class="seal" aria-hidden="true">檢<br>印</div>
     </div>
   </section>
   ${figure("hero-queue.jpg", "木刻版畫風插畫：1940 年代的街上，婦女和孩子提著竹籃在配給所前排隊領米。", "band")}
 
   <section class="sec" id="stories">
-    <h2>${c.topics} 個故事</h2>
-    <p class="lead">每個故事由好幾份研究合成，寫給沒學過臺灣史的人。照時間順序讀，就是一條從配給到通膨的路。</p>
+    <h2>故事</h2>
     ${toc}
   </section>
 
   <section class="sec" id="timeline">
     <h2>時間軸</h2>
-    <p class="lead">點圓點看那一刻發生了什麼。紅線是 1945 年 8 月終戰。用下面的配給券顏色篩選主題。</p>
     <div class="chips" id="tl-chips" role="group" aria-label="依主題篩選"></div>
     <div class="tl-box"><div class="tl" id="tl"></div></div>
     <div class="tl-detail" id="tl-detail" aria-live="polite"></div>
@@ -145,17 +143,15 @@ function home(anchor) {
 
   <section class="sec" id="map">
     <h2>地圖</h2>
-    <p class="lead">黑市、疏開地、被減配的城市。點一下看那裡發生了什麼，圓點的顏色就是它所屬故事的配給券顏色。</p>
     <div id="map-el"></div>
   </section>
 
   <section class="sec" id="more">
-    <h2>還可以看</h2>
+    <h2>更多</h2>
     <div class="more" style="margin-top:20px">
-      <a href="#/numbers"><b>數字</b><span>${W.stats.length} 張圖表：配給量、差別待遇、黑市、米價</span></a>
-      <a href="#/debates"><b>研究爭論</b><span>${W.debates.length} 個問題，研究者看法不一樣的地方</span></a>
-      <a href="#/graph"><b>關係網</b><span>每份資料、每個故事怎麼連在一起</span></a>
-      <a href="#/library"><b>資料庫</b><span>AI 讀過的 ${c.sources} 份資料，其中 ${c.fulltext} 份讀了全文</span></a>
+      <a href="#/numbers"><b>數字</b><span>米價、配給量、黑市案件</span></a>
+      <a href="#/debates"><b>研究爭論</b><span>研究者看法不同的地方</span></a>
+      <a href="#/library"><b>資料庫</b><span>${c.sources} 份研究與史料</span></a>
     </div>
   </section>`;
   drawTimeline();
@@ -215,14 +211,13 @@ function drawMap() {
 function numbers() {
   setNav("numbers");
   app.innerHTML = `<section class="sec" style="border:0"><h1>數字</h1>
-    <p class="lead">只放資料裡真的出現的數字；本站自己換算的，算法寫在圖下方。紅色那一根是最需要注意的數字。</p>
+    <p class="lead">圖下方註明出處與換算方式。</p>
     ${W.stats.map(s => chartBlock(s)).join("")}</section>`;
   mountCharts(app); scrollTo(0, 0);
 }
 function debates() {
   setNav("debates");
   app.innerHTML = `<section class="sec" style="border:0"><h1>研究爭論</h1>
-    <p class="lead">同一件事，研究者有不同的解讀。這些分歧本身就是值得知道的事。</p>
     ${W.debates.map(d => `<div class="debate"><h2>${esc(d.question)}</h2><div class="pos">${d.positions.map(p => `<div>${esc(p.claim)}<small>${refLink(p.source)}</small></div>`).join("")}</div>${d.topic ? `<p class="small">相關故事：${pageLink(d.topic)}</p>` : ""}</div>`).join("")}</section>`;
   scrollTo(0, 0);
 }
@@ -280,6 +275,11 @@ function page(p) {
   if (relT.length) aside += `<div class="box"><h2>${p.type === "source" ? "用在這些故事" : "相關故事與名詞"}</h2>${relT.map(id => `<a href="#/p/${id}">${esc(byId[id].title)}</a>`).join("")}</div>`;
   if (relS.length && p.type !== "topic") aside += `<div class="box"><h2>相關資料</h2>${relS.map(id => `<a href="#/p/${id}">${esc(shortName(byId[id]))}</a>`).join("")}</div>`;
 
+  let body = p.body, lede = "";
+  if (p.type === "topic") {
+    const m = body.match(/^## 一句話說明\s*\n+([\s\S]*?)(?=\n## )/m);
+    if (m) { lede = m[1].trim(); body = body.replace(m[0], ""); }
+  }
   const facts = [p.period ? p.period.join("–") : "", p.kind || "", p.sources ? `根據 ${p.sources.length} 份資料` : "", p.updated ? `更新於 ${p.updated}` : ""].filter(Boolean).map(esc).join("，");
   const sub = p.type === "source" ? `${esc(p.author)}，${esc(p.year)}。${esc(p.venue)}` : `${esc(p.summary || "")}${facts && p.type !== "overview" ? `<br><span class="small">${facts}</span>` : ""}`;
   app.innerHTML = `<div class="page" ${p.type === "topic" ? `data-cat="${catKey(p.category)}"` : ""}><div>
@@ -288,7 +288,8 @@ function page(p) {
       ${p.type === "topic" ? `<span class="stub" aria-hidden="true"><span class="ch">${(CATS[p.category] || CATS["制度"]).ch}</span><span class="no">${esc(p.category)}</span></span>` : ""}
       <div class="ph-body"><h1>${phrase(p.title)}</h1>${sub ? `<div class="meta">${sub}</div>` : ""}</div></header>
     ${p.image ? figure(p.image, p.imageAlt || p.title, "lead-art") : ""}
-    <article class="md">${renderMd(p.body)}</article>
+    ${lede ? `<div class="lede">${renderMd(lede)}</div>` : ""}
+    <article class="md">${renderMd(body)}</article>
     ${aside ? `<aside class="page-info" aria-label="這一頁的相關資訊">${aside}</aside>` : ""}
   </div></div>`;
   mountCharts(app);
@@ -300,7 +301,7 @@ function library() {
   setNav("library");
   const src = W.pages.filter(p => p.type === "source").sort((a, b) => (a.year || 0) - (b.year || 0));
   app.innerHTML = `<section class="sec" style="border:0"><h1>資料庫</h1>
-  <p class="lead">AI 讀過的 ${src.length} 份資料。「全文」是整篇讀完；「摘要」只讀到摘要，內容較淺；「書目」只確認這份資料存在。</p>
+  <p class="lead">「全文」是整篇讀過；「摘要」「部分」「書目」只讀到一部分，內容較淺。</p>
   <div style="overflow-x:auto"><table class="lib"><thead><tr><th>年份</th><th>資料</th><th class="hide-m">類型</th><th>讀到</th><th class="hide-m">可信度</th></tr></thead><tbody>
   ${src.map(s => `<tr><td>${esc(s.year)}</td><td><a href="#/p/${s.id}">${esc(s.title)}</a><div class="small">${esc(s.author)}</div></td><td class="hide-m">${esc(s.kind)}</td><td><span class="depth ${esc(s.depth)}">${esc(s.depth)}</span></td><td class="hide-m">${esc(s.reliability)}</td></tr>`).join("")}
   </tbody></table></div></section>`;
@@ -326,6 +327,7 @@ function about() {
     <tr><td><code>/ask 問題</code></td><td>用網站裡的資料回答問題，好的回答會存成新頁面。</td></tr>
     <tr><td><code>/wiki-lint</code></td><td>健檢整個網站，並列出下一批該找的資料。</td></tr>
   </tbody></table>
+  <p>想看資料卡、故事、名詞之間怎麼互相連結，可以打開<a href="#/graph">關係網</a>。</p>
   <p class="small">換一個題目也能用：把 CLAUDE.md 第 1 節（目的與時期）和第 8 節（風格）換掉，其餘的流程、工具、網站程式都可以照搬。</p>
   ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為 <i style="font-style:normal;color:var(--indigo)">ingest</i> 的每一筆，都是照這些指令新增的內容。</p>` : ""; })()}
   ${ov ? `<h2 style="margin-top:48px">總論：目前我們知道什麼</h2><article class="md">${renderMd(ov.body)}</article>` : ""}
