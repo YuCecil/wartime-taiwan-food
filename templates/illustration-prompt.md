@@ -18,4 +18,4 @@
 - 不畫真實人物的長相（研究者、林獻堂等歷史人物都不畫成肖像），只畫無名的一般人。
 - 存檔：原圖放 `raw/images/<故事id>.jpeg`（不上傳）；網站用的縮圖放 `docs/assets/img/<故事id>.jpg`，寬 1000px、JPEG 品質 70（`sips -Z 1000 -s format jpeg -s formatOptions 70`）。
 - 在故事頁 frontmatter 加 `image: <故事id>.jpg` 與 `imageAlt: 木刻版畫風插畫：……`（用一兩句話描述畫面，給看不到圖的人）。
-- 網站會自動在圖下方加上「AI 生成插畫，不是歷史照片」的說明，不要拿掉。
+- 圖下方不加說明；「關於」頁已統一註明本站插圖由 AI 生成。

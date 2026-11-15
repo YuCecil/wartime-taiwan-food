@@ -67,3 +67,5 @@
 ## [2026-11-15] site | 加入 AI 生成的木刻版畫風插圖：首頁橫幅、9 個故事頁頁首、404 空碗；圖下一律標明「AI 生成，非歷史照片」
 
 ## [2026-11-15] rule | CLAUDE.md 新增 8.2「插圖」；frontmatter 新增 image／imageAlt；新增 templates/illustration-prompt.md；/new-topic 加入插圖步驟
+
+## [2026-11-15] site | 依使用者要求拿掉每張插圖下的 AI 備註，改在「關於」頁統一註明

@@ -1,7 +1,6 @@
 /* 戰時餐桌：網站程式。資料全部來自 data/wiki.json（由 tools/build.py 產生）。
    新增頁面不需要改這個檔案。 */
-const AI_NOTE = "AI 生成插畫（Gemini），依史料描述的情境繪製，不是歷史照片。";
-const figure = (src, alt, cls = "") => `<figure class="art ${cls}"><img src="assets/img/${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"><figcaption>${AI_NOTE}</figcaption></figure>`;
+const figure = (src, alt, cls = "") => `<figure class="art ${cls}"><img src="assets/img/${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></figure>`;
 const TYPE_NAME = { topic: "故事", entity: "名詞", source: "資料卡", question: "問答", overview: "總論" };
 const Y0 = 1937, Y1 = 1950, WAR_END = "1945-08-15";
 const INK = "#1E2A3F", INDIGO = "#34548A", INDIGO2 = "#7489AE", STAMP = "#B23A2E", LINE = "#C7CDC4", MUTED = "#5E6878";
@@ -326,6 +325,7 @@ function about() {
     <tr><td><code>/ask 問題</code></td><td>用網站裡的資料回答問題，好的回答會存成新頁面。</td></tr>
     <tr><td><code>/wiki-lint</code></td><td>健檢整個網站，並列出下一批該找的資料。</td></tr>
   </tbody></table>
+  <p class="small">本站插圖由 AI（Gemini）依史料描述的情境繪製，不是歷史照片。</p>
   <p class="small">換一個題目也能用：把 CLAUDE.md 第 1 節（目的與時期）和第 8 節（風格）換掉，其餘的流程、工具、網站程式都可以照搬。</p>
   ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為 <i style="font-style:normal;color:var(--indigo)">ingest</i> 的每一筆，都是照這些指令新增的內容。</p>` : ""; })()}
   ${ov ? `<h2 style="margin-top:48px">總論：目前我們知道什麼</h2><article class="md">${renderMd(ov.body)}</article>` : ""}

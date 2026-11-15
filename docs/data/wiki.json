@@ -2243,6 +2243,11 @@
    "date": "2026-11-15",
    "kind": "rule",
    "title": "CLAUDE.md 新增 8.2「插圖」；frontmatter 新增 image／imageAlt；新增 templates/illustration-prompt.md；/new-topic 加入插圖步驟"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "site",
+   "title": "依使用者要求拿掉每張插圖下的 AI 備註，改在「關於」頁統一註明"
   }
  ],
  "timeline": [
