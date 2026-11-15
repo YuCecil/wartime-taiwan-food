@@ -163,7 +163,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .pin.post{background:var(--indigo);box-shadow:0 0 0 1px var(--indigo)}
 
 /* 其他頁入口 */
-.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0;border-top:1px solid var(--line)}
+.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:0;border-top:1px solid var(--line)}
 .more a{padding:20px 20px 22px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .more a b{font-family:var(--kai);font-size:21px;display:block}
 .more a span{color:var(--muted);font-size:15px}
@@ -304,3 +304,4 @@ aside dd{margin:0}
 @media (prefers-reduced-motion:reduce){.logo-icon{transition:none}}
 .skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--ink);color:#F6F7F3;padding:6px 12px}
 .skip:focus{left:12px}
+.mini-ev b,.lib th{white-space:nowrap}

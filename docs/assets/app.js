@@ -177,7 +177,10 @@ function drawTimeline() {
 
 function mapPage() {
   setNav("map");
-  app.innerHTML = `<section class="sec" style="border:0"><h1>地圖</h1><div id="map-el"></div></section>`;
+  const used = Object.keys(CATS).filter(k => W.places.some(p => byId[p.topic]?.category === k));
+  app.innerHTML = `<section class="sec" style="border:0"><h1>地圖</h1>
+    <div class="legend">${used.map(k => `<span data-cat="${CATS[k].key}"><i class="pin" style="display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:6px"></i>${k}</span>`).join("")}</div>
+    <div id="map-el"></div></section>`;
   drawMap(); scrollTo(0, 0);
 }
 function drawMap() {
