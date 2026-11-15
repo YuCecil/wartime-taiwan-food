@@ -5,6 +5,8 @@ title: 孩子吃什麼：戰時的營養與學童
 category: 生活
 period: [1937, 1949]
 summary: 戰時國家開始量孩子的「體位」，孩子實際吃了什麼，史料卻很少。
+image: t-wartime-children.jpg
+imageAlt: 木刻版畫風插畫：公學校走廊上，學童排隊量身高體重，另一邊的孩子打開便當，裡面是番薯和少少的飯。
 sources: [s-2013-chen-school-hygiene, s-2017-tseng-table-war, s-2021-schneider-war-height-japan, s-2018-ko-food-for-empire, s-2005-liu-physical-improvement, s-2018-tseng-public-diet]
 updated: 2026-11-15
 ---

@@ -6,6 +6,8 @@ emoji: 🍚
 category: 主食
 period: [1939, 1945]
 summary: 1940 年起，臺灣人吃的每一粒米都由政府分配。
+image: t-rice-ration.jpg
+imageAlt: 木刻版畫風插畫：田邊的收購場，農民挑著稻穀排隊，辦事員用大秤秤重、登記。
 sources: [s-2017-tseng-table-war, s-2009-li-grain-regulation, s-2019-huang-irrigation-farm-org, s-2016-huang-wartime-agri-policy, s-2022-li-rice-production-tw-kr, s-1939-tnn-setsumai]
 updated: 2026-11-15
 ---

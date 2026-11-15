@@ -28,6 +28,10 @@ argument-hint: "<主題，例如：戰時的砂糖>"
 - 「研究者怎麼看」寫出研究者之間的共識與分歧。
 - 「還不知道的事」列出缺口。
 
+## 4.5 頁首插圖（選做）
+- 照 `templates/illustration-prompt.md` 生成一張木刻版畫風插圖（需要能操作瀏覽器使用圖像生成工具；不能的話，把填好的提示詞寫在回報裡，請使用者或主 session 生成）。
+- 存檔與 frontmatter 照 CLAUDE.md 8.2。
+
 ## 5. 接上整個網站
 - `data/timeline.json` 至少 3 個事件、`data/places.json` 有地點就加、`data/stats.json` 有可畫的數字就加（照第 5 節格式，註明算法）、有分歧就加 `data/debates.json`。
 - 在至少 2 個相關的既有頁面加上 `[[新主題 id]]` 連結，並更新 `wiki/overview.md`。

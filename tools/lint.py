@@ -80,6 +80,12 @@ def main():
                     err(name, f"{k} 不在允許清單：{m.get(k)}")
             if m.get("depth") != "書目" and str(m.get("url", "無")) == "無" and m.get("access") == "公開":
                 warn(name, "公開資料卻沒有 url")
+        if m.get("image"):
+            from wikilib import ROOT as _R
+            if not (_R / "docs" / "assets" / "img" / str(m["image"])).exists():
+                err(name, f"image 檔案不存在：docs/assets/img/{m['image']}")
+            if not m.get("imageAlt"):
+                err(name, "有 image 就要寫 imageAlt（給看不到圖的人的文字描述）")
         if t == "topic" and m.get("category") not in ENUM["category"]:
             err(name, f"category 不在允許清單：{m.get('category')}")
         if t == "topic" and len(str(m.get("summary", ""))) > 40:

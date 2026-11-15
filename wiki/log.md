@@ -63,3 +63,7 @@
 ## [2026-11-15] rule | CLAUDE.md 新增 4.4「特殊情況怎麼處理」：依兩次示範（/new-topic 營養與學童、/ingest 報紙清單）中 AI 回報的 19 個疑問補寫；depth 新增「部分」
 
 ## [2026-11-15] site | 「關於」頁新增「想加新內容，要怎麼做」（指令表）；README 加入指令與實測紀錄
+
+## [2026-11-15] site | 加入 AI 生成的木刻版畫風插圖：首頁橫幅、9 個故事頁頁首、404 空碗；圖下一律標明「AI 生成，非歷史照片」
+
+## [2026-11-15] rule | CLAUDE.md 新增 8.2「插圖」；frontmatter 新增 image／imageAlt；新增 templates/illustration-prompt.md；/new-topic 加入插圖步驟

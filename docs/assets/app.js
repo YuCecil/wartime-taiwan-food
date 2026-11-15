@@ -1,5 +1,7 @@
 /* 戰時餐桌：網站程式。資料全部來自 data/wiki.json（由 tools/build.py 產生）。
    新增頁面不需要改這個檔案。 */
+const AI_NOTE = "AI 生成插畫（Gemini），依史料描述的情境繪製，不是歷史照片。";
+const figure = (src, alt, cls = "") => `<figure class="art ${cls}"><img src="assets/img/${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"><figcaption>${AI_NOTE}</figcaption></figure>`;
 const TYPE_NAME = { topic: "故事", entity: "名詞", source: "資料卡", question: "問答", overview: "總論" };
 const Y0 = 1937, Y1 = 1950, WAR_END = "1945-08-15";
 const INK = "#1E2A3F", INDIGO = "#34548A", INDIGO2 = "#7489AE", STAMP = "#B23A2E", LINE = "#C7CDC4", MUTED = "#5E6878";
@@ -125,6 +127,7 @@ function home(anchor) {
       <div class="seal" aria-hidden="true">檢<br>印</div>
     </div>
   </section>
+  ${figure("hero-queue.jpg", "木刻版畫風插畫：1940 年代的街上，婦女和孩子提著竹籃在配給所前排隊領米。", "band")}
 
   <section class="sec" id="stories">
     <h2>${c.topics} 個故事</h2>
@@ -284,6 +287,7 @@ function page(p) {
     <header class="page-h ${p.type === "topic" ? "ticket-h" : ""}" ${p.type === "topic" ? `data-cat="${catKey(p.category)}"` : ""}>
       ${p.type === "topic" ? `<span class="stub" aria-hidden="true"><span class="ch">${(CATS[p.category] || CATS["制度"]).ch}</span><span class="no">${esc(p.category)}</span></span>` : ""}
       <div class="ph-body"><h1>${phrase(p.title)}</h1>${sub ? `<div class="meta">${sub}</div>` : ""}</div></header>
+    ${p.image ? figure(p.image, p.imageAlt || p.title, "lead-art") : ""}
     <article class="md">${renderMd(p.body)}</article>
     ${aside ? `<aside class="page-info" aria-label="這一頁的相關資訊">${aside}</aside>` : ""}
   </div></div>`;

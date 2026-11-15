@@ -6,6 +6,8 @@ emoji: 🐖
 category: 副食
 period: [1940, 1945]
 summary: 豬肉是臺灣人餐桌和祭桌的核心，也是黑市最熱門的商品。
+image: t-pork-and-sides.jpg
+imageAlt: 木刻版畫風插畫：市場肉攤前，拿著配給票的主婦們排隊，攤上的肉所剩無幾。
 sources: [s-2017-tseng-table-war, s-2011-chen-pig-taichung, s-2015-chen-dairy]
 updated: 2026-11-15
 ---

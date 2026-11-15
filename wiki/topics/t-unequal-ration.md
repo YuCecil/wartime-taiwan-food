@@ -6,6 +6,8 @@ emoji: 📜
 category: 制度
 period: [1940, 1945]
 summary: 口號是「內臺一體」，但豬肉、砂糖、木炭都分三六九等。
+image: t-unequal-ration.jpg
+imageAlt: 木刻版畫風插畫：櫃台上，拿白色配給卡的手前面是一大籃木炭和一大包糖，拿紅色配給卡的手前面只有一小撮。
 sources: [s-2017-tseng-table-war]
 updated: 2026-11-15
 ---

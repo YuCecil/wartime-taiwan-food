@@ -6,6 +6,8 @@ emoji: 💸
 category: 戰後
 period: [1945, 1950]
 summary: 鈔票越印越多，四年間發行量增加兩百多倍。
+image: t-inflation.jpg
+imageAlt: 木刻版畫風插畫：婦人把用麻繩綑好的好幾疊鈔票放上米店櫃台，店主撥著算盤。
 sources: [s-2006-wu-taiwan-hyperinflation, s-2021-jia-currency-reform-1949, s-2023-wu-rice-shortage-excerpt, s-2025-chen-rice-price-1945-1947]
 updated: 2026-11-15
 ---

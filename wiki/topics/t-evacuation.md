@@ -6,6 +6,8 @@ emoji: 🏠
 category: 生活
 period: [1943, 1945]
 summary: 為了躲空襲搬到鄉下，日本人第一次跟臺灣農家同桌吃飯。
+image: t-evacuation.jpg
+imageAlt: 木刻版畫風插畫：鄉下三合院的曬穀場，疏開來的家庭和農家同桌吃飯，遠方天空有飛機。
 sources: [s-2017-tseng-table-war, s-2024-takada-building-evacuation, s-2020-ohora-tainan-raid, s-2025-thomas-taipei-raid, s-2021-schneider-war-height-japan]
 updated: 2026-11-15
 ---

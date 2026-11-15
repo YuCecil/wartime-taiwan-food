@@ -6,6 +6,8 @@ emoji: 🍠
 category: 主食
 period: [1940, 1949]
 summary: 米不夠，就用番薯籤、樹薯粉和田邊的野菜補。
+image: t-substitute-food.jpg
+imageAlt: 木刻版畫風插畫：農家灶腳裡，母親把番薯籤拌進飯鍋，竹篩上晒著番薯籤，孩子蹲在灶邊。
 sources: [s-2017-tseng-table-war, s-2009-li-grain-regulation, s-2018-tseng-public-diet, s-2013-tseng-hometown, s-1941-tnn-daiyoshoku]
 updated: 2026-11-15
 ---

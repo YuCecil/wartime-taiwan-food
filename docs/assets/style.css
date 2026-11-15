@@ -77,6 +77,14 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
   @keyframes press{from{transform:rotate(-10deg) scale(1.25);opacity:.35}to{transform:rotate(-10deg) scale(1);opacity:.88}}
 }
 
+/* 插圖（AI 生成木刻版畫風；只放在頁首與首頁橫幅，閱讀欄不放） */
+.art{margin:0}
+.art img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border:1px solid var(--line);background:var(--sheet)}
+.art figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.art.band{margin:0 0 8px}
+.art.band img{aspect-ratio:3/1;object-position:50% 58%}
+.art.lead-art{margin:6px 0 10px}
+
 /* 區塊 */
 .sec{padding:56px 0;border-top:1px solid var(--line)}
 .sec>h2,.sec>h1{font-size:30px}
@@ -234,6 +242,7 @@ aside dd{margin:0}
   .hero h1{font-size:34px}
   .page{padding-top:28px}
   .page-h h1{font-size:30px}
+  .art.band img{aspect-ratio:2/1}
 }
 @media (max-width:560px){
   body{font-size:16.5px}

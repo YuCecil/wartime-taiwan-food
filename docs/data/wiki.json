@@ -889,6 +889,8 @@
     1945
    ],
    "summary": "黑市無所不在，是臺灣人自己的秘密交易網絡。",
+   "image": "t-black-market.jpg",
+   "imageAlt": "木刻版畫風插畫：龍山寺前的廣場，攤販在地上擺賣菜、魚和烤肉，人們低聲交易。",
    "sources": [
     "s-2017-tseng-table-war",
     "s-2009-li-grain-regulation",
@@ -914,6 +916,8 @@
     1945
    ],
    "summary": "為了躲空襲搬到鄉下，日本人第一次跟臺灣農家同桌吃飯。",
+   "image": "t-evacuation.jpg",
+   "imageAlt": "木刻版畫風插畫：鄉下三合院的曬穀場，疏開來的家庭和農家同桌吃飯，遠方天空有飛機。",
    "sources": [
     "s-2017-tseng-table-war",
     "s-2024-takada-building-evacuation",
@@ -944,6 +948,8 @@
     1950
    ],
    "summary": "鈔票越印越多，四年間發行量增加兩百多倍。",
+   "image": "t-inflation.jpg",
+   "imageAlt": "木刻版畫風插畫：婦人把用麻繩綑好的好幾疊鈔票放上米店櫃台，店主撥著算盤。",
    "sources": [
     "s-2006-wu-taiwan-hyperinflation",
     "s-2021-jia-currency-reform-1949",
@@ -971,6 +977,8 @@
     1945
    ],
    "summary": "豬肉是臺灣人餐桌和祭桌的核心，也是黑市最熱門的商品。",
+   "image": "t-pork-and-sides.jpg",
+   "imageAlt": "木刻版畫風插畫：市場肉攤前，拿著配給票的主婦們排隊，攤上的肉所剩無幾。",
    "sources": [
     "s-2017-tseng-table-war",
     "s-2011-chen-pig-taichung",
@@ -997,6 +1005,8 @@
     1947
    ],
    "summary": "終戰後一斤米從 1.9 元漲到 71 元，臺灣人反而買不起米。",
+   "image": "t-postwar-famine.jpg",
+   "imageAlt": "木刻版畫風插畫：米店木門緊閉，門前擠滿提著空米袋、神情焦急的人。",
    "sources": [
     "s-2014-su-postwar-rice",
     "s-2025-chen-rice-price-dataset",
@@ -1032,6 +1042,8 @@
     1945
    ],
    "summary": "1940 年起，臺灣人吃的每一粒米都由政府分配。",
+   "image": "t-rice-ration.jpg",
+   "imageAlt": "木刻版畫風插畫：田邊的收購場，農民挑著稻穀排隊，辦事員用大秤秤重、登記。",
    "sources": [
     "s-2017-tseng-table-war",
     "s-2009-li-grain-regulation",
@@ -1067,6 +1079,8 @@
     1949
    ],
    "summary": "米不夠，就用番薯籤、樹薯粉和田邊的野菜補。",
+   "image": "t-substitute-food.jpg",
+   "imageAlt": "木刻版畫風插畫：農家灶腳裡，母親把番薯籤拌進飯鍋，竹篩上晒著番薯籤，孩子蹲在灶邊。",
    "sources": [
     "s-2017-tseng-table-war",
     "s-2009-li-grain-regulation",
@@ -1096,6 +1110,8 @@
     1945
    ],
    "summary": "口號是「內臺一體」，但豬肉、砂糖、木炭都分三六九等。",
+   "image": "t-unequal-ration.jpg",
+   "imageAlt": "木刻版畫風插畫：櫃台上，拿白色配給卡的手前面是一大籃木炭和一大包糖，拿紅色配給卡的手前面只有一小撮。",
    "sources": [
     "s-2017-tseng-table-war"
    ],
@@ -1118,6 +1134,8 @@
     1949
    ],
    "summary": "戰時國家開始量孩子的「體位」，孩子實際吃了什麼，史料卻很少。",
+   "image": "t-wartime-children.jpg",
+   "imageAlt": "木刻版畫風插畫：公學校走廊上，學童排隊量身高體重，另一邊的孩子打開便當，裡面是番薯和少少的飯。",
    "sources": [
     "s-2013-chen-school-hygiene",
     "s-2017-tseng-table-war",
@@ -2215,6 +2233,16 @@
    "date": "2026-11-15",
    "kind": "site",
    "title": "「關於」頁新增「想加新內容，要怎麼做」（指令表）；README 加入指令與實測紀錄"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "site",
+   "title": "加入 AI 生成的木刻版畫風插圖：首頁橫幅、9 個故事頁頁首、404 空碗；圖下一律標明「AI 生成，非歷史照片」"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "rule",
+   "title": "CLAUDE.md 新增 8.2「插圖」；frontmatter 新增 image／imageAlt；新增 templates/illustration-prompt.md；/new-topic 加入插圖步驟"
   }
  ],
  "timeline": [

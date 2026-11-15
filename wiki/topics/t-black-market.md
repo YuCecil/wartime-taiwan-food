@@ -6,6 +6,8 @@ emoji: 🧺
 category: 市場
 period: [1938, 1945]
 summary: 黑市無所不在，是臺灣人自己的秘密交易網絡。
+image: t-black-market.jpg
+imageAlt: 木刻版畫風插畫：龍山寺前的廣場，攤販在地上擺賣菜、魚和烤肉，人們低聲交易。
 sources: [s-2017-tseng-table-war, s-2009-li-grain-regulation, s-1941-tnn-yami-torihiki]
 updated: 2026-11-15
 ---

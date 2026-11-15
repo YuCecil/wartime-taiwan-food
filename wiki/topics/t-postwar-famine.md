@@ -6,6 +6,8 @@ emoji: 🌾
 category: 戰後
 period: [1945, 1947]
 summary: 終戰後一斤米從 1.9 元漲到 71 元，臺灣人反而買不起米。
+image: t-postwar-famine.jpg
+imageAlt: 木刻版畫風插畫：米店木門緊閉，門前擠滿提著空米袋、神情焦急的人。
 sources: [s-2014-su-postwar-rice, s-2025-chen-rice-price-dataset, s-2025-chen-rice-price-1945-1947, s-2023-wu-rice-shortage-excerpt, s-2018-tseng-public-diet, s-2016-huang-wartime-agri-policy, s-2019-huang-irrigation-farm-org]
 updated: 2026-11-15
 ---
