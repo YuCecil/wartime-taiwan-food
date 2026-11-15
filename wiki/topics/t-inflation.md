@@ -2,7 +2,6 @@
 id: t-inflation
 type: topic
 title: 四萬元換一元：惡性通膨
-emoji: 💸
 category: 戰後
 period: [1945, 1950]
 summary: 鈔票越印越多，四年間發行量增加兩百多倍。

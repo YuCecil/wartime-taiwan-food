@@ -2,7 +2,6 @@
 id: t-black-market
 type: topic
 title: 龍山寺前的秘密市場：黑市
-emoji: 🧺
 category: 市場
 period: [1938, 1945]
 summary: 黑市無所不在，是臺灣人自己的秘密交易網絡。

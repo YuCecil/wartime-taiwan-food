@@ -2,7 +2,6 @@
 id: t-pork-and-sides
 type: topic
 title: 十天一次的豬肉
-emoji: 🐖
 category: 副食
 period: [1940, 1945]
 summary: 豬肉是臺灣人餐桌和祭桌的核心，黑市裡的豬肉交易特別盛行。

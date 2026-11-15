@@ -2,7 +2,6 @@
 id: t-postwar-famine
 type: topic
 title: 戰爭結束了，米卻更少了：戰後米荒
-emoji: 🌾
 category: 戰後
 period: [1945, 1947]
 summary: 終戰後一斤米從 1.9 元漲到 71 元，臺灣人反而買不起米。

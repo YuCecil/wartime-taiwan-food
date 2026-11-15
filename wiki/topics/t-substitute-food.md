@@ -2,7 +2,6 @@
 id: t-substitute-food
 type: topic
 title: 番薯籤、野菜與蝸牛：代用食
-emoji: 🍠
 category: 主食
 period: [1940, 1949]
 summary: 米不夠，就用番薯籤、樹薯粉和田邊的野菜補。

@@ -2,7 +2,6 @@
 id: t-evacuation
 type: topic
 title: 躲空襲躲到鄉下：疏開
-emoji: 🏠
 category: 生活
 period: [1943, 1945]
 summary: 為了躲空襲搬到鄉下，不少日本人得靠臺灣農家吃飯、過日子。

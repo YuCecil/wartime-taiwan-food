@@ -2,7 +2,6 @@
 id: t-unequal-ration
 type: topic
 title: 嘴上說平等：分等級的配給
-emoji: 📜
 category: 制度
 period: [1940, 1945]
 summary: 口號是「內臺一體」，但豬肉、砂糖、木炭都分三六九等。

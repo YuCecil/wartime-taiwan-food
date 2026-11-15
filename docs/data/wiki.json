@@ -882,7 +882,6 @@
    "id": "t-black-market",
    "type": "topic",
    "title": "龍山寺前的秘密市場：黑市",
-   "emoji": "🧺",
    "category": "市場",
    "period": [
     1938,
@@ -909,7 +908,6 @@
    "id": "t-evacuation",
    "type": "topic",
    "title": "躲空襲躲到鄉下：疏開",
-   "emoji": "🏠",
    "category": "生活",
    "period": [
     1943,
@@ -942,7 +940,6 @@
    "id": "t-inflation",
    "type": "topic",
    "title": "四萬元換一元：惡性通膨",
-   "emoji": "💸",
    "category": "戰後",
    "period": [
     1945,
@@ -971,7 +968,6 @@
    "id": "t-pork-and-sides",
    "type": "topic",
    "title": "十天一次的豬肉",
-   "emoji": "🐖",
    "category": "副食",
    "period": [
     1940,
@@ -999,7 +995,6 @@
    "id": "t-postwar-famine",
    "type": "topic",
    "title": "戰爭結束了，米卻更少了：戰後米荒",
-   "emoji": "🌾",
    "category": "戰後",
    "period": [
     1945,
@@ -1037,7 +1032,6 @@
    "id": "t-rice-ration",
    "type": "topic",
    "title": "一天能吃多少米？米穀配給",
-   "emoji": "🍚",
    "category": "主食",
    "period": [
     1939,
@@ -1074,7 +1068,6 @@
    "id": "t-substitute-food",
    "type": "topic",
    "title": "番薯籤、野菜與蝸牛：代用食",
-   "emoji": "🍠",
    "category": "主食",
    "period": [
     1940,
@@ -1105,7 +1098,6 @@
    "id": "t-unequal-ration",
    "type": "topic",
    "title": "嘴上說平等：分等級的配給",
-   "emoji": "📜",
    "category": "制度",
    "period": [
     1940,
@@ -2310,6 +2302,11 @@
    "date": "2026-11-15",
    "kind": "site",
    "title": "瀏覽器逐頁檢查後的修正"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "rule",
+   "title": "補上新 AI 開工會卡住的地方"
   }
  ],
  "timeline": [

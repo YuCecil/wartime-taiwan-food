@@ -2,7 +2,6 @@
 id: t-rice-ration
 type: topic
 title: 一天能吃多少米？米穀配給
-emoji: 🍚
 category: 主食
 period: [1939, 1945]
 summary: 1940 年起，臺灣人吃的每一粒米都由政府分配。
