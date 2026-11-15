@@ -309,7 +309,7 @@ function library() {
 function about() {
   setNav("about");
   const ov = byId["overview"];
-  app.innerHTML = `<section class="sec reading" style="border:0"><div class="about-h"><h1>這個網站怎麼做的</h1><img class="mascot mascot-about" src="assets/img/mascot.png" alt="" aria-hidden="true" width="382" height="520"></div>
+  app.innerHTML = `<section class="sec reading" style="border:0"><div class="about-h"><h1>這個網站怎麼做的</h1><img class="mascot mascot-about" src="assets/img/mascot-book.png" alt="" aria-hidden="true" width="382" height="520"></div>
   <p class="lead">研究論文多到人讀不完，所以讓 AI 讀，人負責找資料和提問。這個做法叫 LLM Wiki，概念來自 Andrej Karpathy。</p>
   <ol class="flow">
     <li><span><b>收集原始資料</b><br>論文、報紙、統計放在 raw 資料夾。原文有著作權，不公開。</span></li>

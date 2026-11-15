@@ -273,7 +273,7 @@ updated: 2026-11-15
 
 - 戴竹編斗笠、穿藍色臺灣衫、提竹籃的擬人番薯（番薯是戰時代用食，也是臺灣人的自稱）。角色是網站的導覽員，語氣同第 8 節。
 - **只出現在三個地方**：首頁開場左欄、關於頁標題旁、404 頁。故事頁、資料卡、圖表、目錄都不放，一頁最多一隻。
-- 檔案：`docs/assets/img/mascot.png`（去背透明 PNG，寬不超過 520px）；原圖 `raw/images/mascot-sweetpotato.jpeg`。要新姿勢時，用 `templates/illustration-prompt.md` 的畫風，並在提示詞寫明「保持斗笠、藍色臺灣衫、番薯身體的造型」。
+- 檔案（去背透明 PNG，寬不超過 520px；原圖在 `raw/images/`）：首頁用 `mascot.png`（提竹籃）、關於頁用 `mascot-book.png`（捧配給簿）、404 用 `mascot-bowl.png`（看著空碗發愁）。要新姿勢時，用 `templates/illustration-prompt.md` 的畫風，並在提示詞寫明「保持斗笠、藍色臺灣衫、番薯身體的造型」。
 
 ### 8.1 禁止清單（參考 Impeccable 的 AI slop 檢查）
 
