@@ -244,7 +244,11 @@ function graph() {
     physics: { solver: "forceAtlas2Based", forceAtlas2Based: { gravitationalConstant: -60, centralGravity: .02, springLength: 80, avoidOverlap: .5 }, stabilization: { iterations: 250 } },
     interaction: { hover: true, zoomView: true },
   });
-  g.once("stabilizationIterationsDone", () => g.fit({ animation: false }));
+  /* 直接開這頁時，穩定化可能在版面排好前就結束，fit 會算成最大倍率；所以穩定後與一秒後各 fit 一次 */
+  const fit = () => g.fit({ animation: false, maxZoomLevel: 1.5 });
+  g.once("stabilizationIterationsDone", fit);
+  g.once("stabilized", fit);
+  setTimeout(fit, 1000);
   g.on("click", e => { if (e.nodes[0]) location.hash = "#/p/" + e.nodes[0]; });
   live.graph = g;
   scrollTo(0, 0);
