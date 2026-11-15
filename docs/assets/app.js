@@ -314,6 +314,16 @@ function about() {
     <li><span><b>產生網站</b><br>build.py 把 wiki 轉成這個網站。新增頁面不用改程式。</span></li>
   </ol>
   <p>規則全文：<a href="https://github.com/YuCecil/wartime-taiwan-food/blob/main/CLAUDE.md" target="_blank" rel="noopener">CLAUDE.md</a>。程式碼：<a href="https://github.com/YuCecil/wartime-taiwan-food" target="_blank" rel="noopener">GitHub</a>。</p>
+  <h2 style="margin-top:48px">想加新內容，要怎麼做</h2>
+  <p>在專案資料夾打開 Claude Code，輸入一行指令就好。AI 會照 CLAUDE.md 做完整套流程：讀資料、寫資料卡、併進故事、更新時間軸與圖表、自動檢查、寫紀錄。</p>
+  <table class="lib" style="margin:14px 0 8px"><thead><tr><th>指令</th><th>做什麼</th></tr></thead><tbody>
+    <tr><td><code>/ingest</code></td><td>把論文 PDF 或剪報丟進 <code>inbox/</code> 資料夾，再輸入這個指令。</td></tr>
+    <tr><td><code>/new-topic 主題</code></td><td>例如 <code>/new-topic 戰時的砂糖</code>，AI 自己找資料、讀全文，新增一個完整的故事。</td></tr>
+    <tr><td><code>/ask 問題</code></td><td>用網站裡的資料回答問題，好的回答會存成新頁面。</td></tr>
+    <tr><td><code>/wiki-lint</code></td><td>健檢整個網站，並列出下一批該找的資料。</td></tr>
+  </tbody></table>
+  <p class="small">換一個題目也能用：把 CLAUDE.md 第 1 節（目的與時期）和第 8 節（風格）換掉，其餘的流程、工具、網站程式都可以照搬。</p>
+  ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為 <i style="font-style:normal;color:var(--indigo)">ingest</i> 的每一筆，都是照這些指令新增的內容。</p>` : ""; })()}
   ${ov ? `<h2 style="margin-top:48px">總論：目前我們知道什麼</h2><article class="md">${renderMd(ov.body)}</article>` : ""}
   ${W.log?.length ? `<h2 style="margin-top:48px">更新紀錄</h2><div style="margin-top:14px">${W.log.slice().reverse().map(l => `<div class="log-row"><b>${esc(l.date)}</b><i>${esc(l.kind)}</i><span>${esc(l.title)}</span></div>`).join("")}</div>` : ""}
   </section>`;

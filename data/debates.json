@@ -74,16 +74,16 @@
   ]
  },
  {
-  "question": "疏開的孩子，吃得比較好還是比較餓？",
+  "question": "日治時期臺灣人吃得夠不夠？生活水準有沒有變好？",
   "topic": "t-wartime-children",
   "positions": [
    {
-    "claim": "曾品滄引用的臺灣疏開者回憶：鄉下食物相對豐富，日本家庭的孩子更有元氣，帶學生疏散的老師也靠農場菜園讓學生吃得津津有味（談臺灣）。",
-    "source": "s-2017-tseng-table-war"
+    "claim": "Samuel Ho：每人每天食物約 1,800–2,000 大卡，1930 年代後農村所得與消費下降（劉士永整理）。",
+    "source": "s-2005-liu-physical-improvement"
    },
    {
-    "claim": "Schneider 等人：日本本土 130 萬名被疏散的都市孩子中，以學校為單位集體疏散的孩子挨餓，越接近戰爭尾聲越嚴重；投靠親戚的孩子可能比較好（談日本本土）。",
-    "source": "s-2021-schneider-war-height-japan"
+    "claim": "Yeh：依年齡結構調整後約 2,500 大卡，「不算低」；劉士永以身高資料支持較樂觀的看法，但承認 1920 年代後期增幅變慢，戰時汲取加重的影響還待檢驗。",
+    "source": "s-2005-liu-physical-improvement"
    }
   ]
  }

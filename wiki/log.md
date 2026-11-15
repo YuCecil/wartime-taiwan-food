@@ -52,3 +52,14 @@
 - 發現：臺灣 1937–45 年的學童營養沒有找到直接資料（沒有學校午餐、學童身高體重的紀錄）；朝鮮與日本 1944 年 3 月有學校午餐或學童特別配給；日本戰時童年後期世代長大後矮 3.0／1.7 公分，臺灣無同類研究
 - 資料缺口：陳宜君 2013 碩論全文（臺師大須輸入驗證碼，未繞過）；王文昕 2017、李力庸〈殖民、營養與風尚〉、陳玉箴 2015 全文；《臺灣總督府學生生徒兒童身體檢查統計書》原始統計；戰後 1945–49 學童營養
 - 備註：劉士永全文原站維護中，改用 Internet Archive 存檔；escholarship 兩份（Marshaling Culture、Taiwanese Homes, Japanese Schools）回應 HTTP 202 空內容，未硬抓
+
+## [2026-11-15] ingest | 臺灣日日新報標題清單：節米、闇取引、代用食
+- 新增資料卡（書目等級，只有標題無內文）：s-1939-tnn-setsumai（「節米」，71 則）、s-1941-tnn-yami-torihiki（「闇取引」，20 則）、s-1941-tnn-daiyoshoku（「代用食」，20 則）。三份都是台大資料庫檢索結果，出版年取最早一則的年份，作者以報紙名稱「tnn」代替
+- 更新：t-rice-ration、t-substitute-food、t-black-market（補一段報紙報導與來源）；overview（一，節米報導的月份分布）；timeline（+9，皆依標題）
+- 未做：/new-topic「報紙上的配給生活」新故事。原因：三份都只有標題、沒有全文，不到 /new-topic 要求的 4 份資料（其中 2 份全文）；且節米、代用食、闇取引與既有的 t-rice-ration、t-substitute-food、t-black-market 高度重疊，依 /new-topic 第 1 節改為擴充既有主題頁
+- 原始檔：raw/newspapers/ 下的 s-1939-tnn-setsumai.txt、s-1941-tnn-yami-torihiki.txt、s-1941-tnn-daiyoshoku.txt（由 inbox 移入）
+- 發現：節米報導 71 則中 49 則在 1940 年 3 月；曾品滄的節米日（逢 5、10、15）與高雄州標題（1 日、15 日）待核對
+
+## [2026-11-15] rule | CLAUDE.md 新增 4.4「特殊情況怎麼處理」：依兩次示範（/new-topic 營養與學童、/ingest 報紙清單）中 AI 回報的 19 個疑問補寫；depth 新增「部分」
+
+## [2026-11-15] site | 「關於」頁新增「想加新內容，要怎麼做」（指令表）；README 加入指令與實測紀錄

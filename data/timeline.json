@@ -294,5 +294,77 @@
   "category": "生活",
   "topic": "t-wartime-children",
   "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1939-10-07",
+  "title": "日本宣布「節米政策」斷行",
+  "desc": "臺灣的報紙第一版登出日本農商大臣宣布斷行節米政策的消息。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-1939-tnn-setsumai"
+ },
+ {
+  "date": "1939-10-31",
+  "title": "節米勅令案送交總動員審議會",
+  "desc": "報紙報導節米的勅令草案（依國家總動員法第八條）送交審議。",
+  "category": "制度",
+  "topic": "t-rice-ration",
+  "source": "s-1939-tnn-setsumai"
+ },
+ {
+  "date": "1940-03-02",
+  "title": "總督府限制米作工業原料與飼料",
+  "desc": "報紙報導總督府決定限制米作為原料，稻穀與糙米也禁止作飼料。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-1939-tnn-setsumai"
+ },
+ {
+  "date": "1940-03-26",
+  "title": "苗栗郡節米改用切符制",
+  "desc": "苗栗郡把購米分成五個階段，改用切符制。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-1939-tnn-setsumai"
+ },
+ {
+  "date": "1941-05-08",
+  "title": "全島「闇取引防止週間」結束",
+  "desc": "報紙報導全島同步展開的一週黑市防止運動結束，並呼籲再加把勁。",
+  "category": "市場",
+  "topic": "t-black-market",
+  "source": "s-1941-tnn-yami-torihiki"
+ },
+ {
+  "date": "1941-11-13",
+  "title": "消費米的代用食改為全面管理",
+  "desc": "在「米穀等緊急措置令」下，消費米的代用食改由政府全面管理。",
+  "category": "主食",
+  "topic": "t-substitute-food",
+  "source": "s-1941-tnn-daiyoshoku"
+ },
+ {
+  "date": "1941-12-29",
+  "title": "配付公定價格表，防止黑市",
+  "desc": "報紙報導配付公定價格表，作為防止黑市的做法。",
+  "category": "市場",
+  "topic": "t-black-market",
+  "source": "s-1941-tnn-yami-torihiki"
+ },
+ {
+  "date": "1942-05-06",
+  "title": "新興代用食「海寶米」登場",
+  "desc": "報紙介紹海寶米，目標是節省米麥一百萬石，麻豆街將設大型工廠。",
+  "category": "主食",
+  "topic": "t-substitute-food",
+  "source": "s-1941-tnn-daiyoshoku"
+ },
+ {
+  "date": "1942-12-16",
+  "title": "設立闇取引排除撲滅專門委員會",
+  "desc": "報紙報導設立專門委員會，專責排除與撲滅黑市。",
+  "category": "市場",
+  "topic": "t-black-market",
+  "source": "s-1941-tnn-yami-torihiki"
  }
 ]
