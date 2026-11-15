@@ -10,7 +10,7 @@ url: https://journals.sub.uni-hamburg.de/giga/jcca/article/download/1175/1175-12
 access: 公開
 depth: 全文
 period: [1947, 1959]
-topics: [t-rice-ration, t-unequal-ration]
+topics: [t-rice-ration, t-unequal-ration, t-wartime-children]
 entities: []
 reliability: 高
 added: 2026-11-15

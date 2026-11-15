@@ -44,3 +44,11 @@
 - 仍無全文：黃仁姿 2016 博論（政大只限線上檢索）、許雪姬 1999（無電子全文）、曾品滄 2013、陳玉箴 2015、陳明達 2011（政大有驗證碼，未嘗試繞過）、陳怡宏 2014 與王文昕 2017（台大 TDR 拒絕連線，已停止重試）
 
 ## [2026-11-15] rule | CLAUDE.md 6.1：讀全文先寫 raw/notes 全文筆記；列出全文取得順序；批次 agent 範圍限制
+
+## [2026-11-15] ingest | 新主題：戰時的營養與學童
+- 新增資料卡：s-2013-chen-school-hygiene（摘要）、s-2005-liu-physical-improvement（全文）、s-2021-schneider-war-height-japan（全文，日本本土對照）、s-2018-ko-food-for-empire（摘要＋讀了學校午餐一節，朝鮮對照）
+- 新增頁面：t-wartime-children、e-taii；全文筆記 raw/notes 4 份（劉士永、Schneider、Ko、曾品滄 2017 局部）
+- 更新：overview（新增「孩子的餐桌」）、t-evacuation、t-rice-ration、t-substitute-food（加連結）、s-2017 與 s-2018-tseng-public-diet（topics）；timeline（+3）、stats（+2）、places（+2）、debates（+1）
+- 發現：臺灣 1937–45 年的學童營養沒有找到直接資料（沒有學校午餐、學童身高體重的紀錄）；朝鮮與日本 1944 年 3 月有學校午餐或學童特別配給；日本戰時童年後期世代長大後矮 3.0／1.7 公分，臺灣無同類研究
+- 資料缺口：陳宜君 2013 碩論全文（臺師大須輸入驗證碼，未繞過）；王文昕 2017、李力庸〈殖民、營養與風尚〉、陳玉箴 2015 全文；《臺灣總督府學生生徒兒童身體檢查統計書》原始統計；戰後 1945–49 學童營養
+- 備註：劉士永全文原站維護中，改用 Internet Archive 存檔；escholarship 兩份（Marshaling Culture、Taiwanese Homes, Japanese Schools）回應 HTTP 202 空內容，未硬抓

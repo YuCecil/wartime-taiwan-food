@@ -72,5 +72,19 @@
     "source": "s-2014-su-postwar-rice"
    }
   ]
+ },
+ {
+  "question": "疏開的孩子，吃得比較好還是比較餓？",
+  "topic": "t-wartime-children",
+  "positions": [
+   {
+    "claim": "曾品滄引用的臺灣疏開者回憶：鄉下食物相對豐富，日本家庭的孩子更有元氣，帶學生疏散的老師也靠農場菜園讓學生吃得津津有味（談臺灣）。",
+    "source": "s-2017-tseng-table-war"
+   },
+   {
+    "claim": "Schneider 等人：日本本土 130 萬名被疏散的都市孩子中，以學校為單位集體疏散的孩子挨餓，越接近戰爭尾聲越嚴重；投靠親戚的孩子可能比較好（談日本本土）。",
+    "source": "s-2021-schneider-war-height-japan"
+   }
+  ]
  }
 ]

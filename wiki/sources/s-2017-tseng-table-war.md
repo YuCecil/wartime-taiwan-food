@@ -10,8 +10,8 @@ url: 無
 access: 使用者提供
 depth: 全文
 period: [1937, 1945]
-topics: [t-rice-ration, t-unequal-ration, t-pork-and-sides, t-substitute-food, t-black-market, t-evacuation]
-entities: [e-economic-police, e-mobilization-law, e-price-control, e-hokohan, e-kokugo-family]
+topics: [t-rice-ration, t-unequal-ration, t-pork-and-sides, t-substitute-food, t-black-market, t-evacuation, t-wartime-children]
+entities: [e-economic-police, e-mobilization-law, e-price-control, e-hokohan, e-kokugo-family, e-taii]
 reliability: 高
 added: 2026-11-15
 ---

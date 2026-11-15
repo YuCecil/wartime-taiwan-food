@@ -6,7 +6,7 @@ emoji: 🏠
 category: 生活
 period: [1943, 1945]
 summary: 為了躲空襲搬到鄉下，日本人第一次跟臺灣農家同桌吃飯。
-sources: [s-2017-tseng-table-war, s-2024-takada-building-evacuation, s-2020-ohora-tainan-raid, s-2025-thomas-taipei-raid]
+sources: [s-2017-tseng-table-war, s-2024-takada-building-evacuation, s-2020-ohora-tainan-raid, s-2025-thomas-taipei-raid, s-2021-schneider-war-height-japan]
 updated: 2026-11-15
 ---
 
@@ -38,6 +38,7 @@ updated: 2026-11-15
 - 曾品滄認為，疏開讓日本人脫離殖民者的生活空間，從「高高在上的統治者」變成「可親近、甚至值得同情的一群人」；皇民化的單向同化，在這裡被逆轉成日本人的在地化（[[s-2017-tseng-table-war]]）。
 - 但他也提醒：這段經驗很短，戰爭一結束日本人就被遣返，不能當成日臺關係改善的指標（[[s-2017-tseng-table-war]]）。
 - 一些描寫疏開地「日臺一家」的文字，可能出自皇民奉公會等宣傳機構，閱讀時要打折扣（[[s-2017-tseng-table-war]]）。
+- 疏開的孩子吃得好不好：臺灣疏開者的回憶說孩子更有元氣；日本本土則有研究說以學校為單位集體疏散的孩子挨餓。兩邊談的是不同地方，見 [[t-wartime-children]]（[[s-2021-schneider-war-height-japan]]）。
 
 ## 延伸閱讀
 
@@ -45,6 +46,7 @@ updated: 2026-11-15
 - [[s-2024-takada-building-evacuation]]
 - [[s-2020-ohora-tainan-raid]]
 - [[s-2025-thomas-taipei-raid]]
+- [[t-wartime-children]]（疏開地的孩子吃什麼）
 
 ## 還不知道的事
 

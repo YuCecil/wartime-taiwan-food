@@ -126,5 +126,21 @@
   "desc": "1945 年 5 月 31 日臺北大空襲，政府街區大部分被毀，總督府一翼被炸。",
   "topic": "t-evacuation",
   "source": "s-2025-thomas-taipei-raid"
+ },
+ {
+  "name": "臺北第一中學校（今建國中學一帶）",
+  "lat": 25.0299,
+  "lng": 121.5114,
+  "desc": "柯德三在這裡讀書，帶滷肉便當被日本同學取笑，回家哭著要母親改做日式便當菜（地點座標為今日建國中學的大約位置，是一般換算，非出自本資料）。",
+  "topic": "t-wartime-children",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "南投草屯雙冬",
+  "lat": 24.03,
+  "lng": 120.75,
+  "desc": "臺北師範學校女子部的學生疏散到這裡，學校周圍的農場種番薯、山芋，菜園的收成分給學生吃（座標為大約位置）。",
+  "topic": "t-wartime-children",
+  "source": "s-2017-tseng-table-war"
  }
 ]

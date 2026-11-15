@@ -41,6 +41,7 @@ updated: 2026-11-15
 - [[s-2009-li-grain-regulation]]
 - [[s-2018-tseng-public-diet]]
 - [[s-2013-tseng-hometown]]（曾品滄另一篇談戰時「臺灣料理」與鄉土食的研究，本站目前只有書目）
+- [[t-wartime-children]]（孩子的營養與學校裡的便當）
 
 ## 還不知道的事
 

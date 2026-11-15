@@ -270,5 +270,29 @@
   "category": "戰後",
   "topic": "t-inflation",
   "source": "s-2006-wu-taiwan-hyperinflation"
+ },
+ {
+  "date": "1937",
+  "title": "中學生為了便當自卑",
+  "desc": "臺北第一中學校的柯德三帶滷肉、滷蛋便當被日本同學取笑，回家哭著請母親改做日式菜（年份是依文中「皇民化運動興起的隔年」推算）。",
+  "category": "生活",
+  "topic": "t-wartime-children",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1938",
+  "title": "學校衛生有了專職官員",
+  "desc": "總督府設置專管學校衛生的「體育官」，並成立臺灣學校衛生會，開始提高對兒童的健康標準。",
+  "category": "生活",
+  "topic": "t-wartime-children",
+  "source": "s-2013-chen-school-hygiene"
+ },
+ {
+  "date": "1942",
+  "title": "青少年的米多配一點",
+  "desc": "配給改成重量制，理由是「提高國民體位」：輕勞動者、青少年、孕婦每天 390 公克，一般成年人 330 公克。",
+  "category": "生活",
+  "topic": "t-wartime-children",
+  "source": "s-2017-tseng-table-war"
  }
 ]
