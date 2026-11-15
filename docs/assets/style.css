@@ -275,3 +275,20 @@ aside dd{margin:0}
 .inline-fig{margin:30px 0}
 .inline-fig img{display:block;width:100%;height:auto;border:1px solid var(--line)}
 .inline-fig figcaption{font-family:var(--kai);font-size:15.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+
+/* 故事卡片等高 */
+.tickets{grid-auto-rows:1fr}
+.tickets>li{display:flex}
+.tickets>li>.ticket{flex:1}
+/* 時間軸：照年份的直式清單 */
+.tl-year-g{max-width:880px;margin:26px 0 0}
+.tl-y{font-family:var(--kai);font-size:30px;margin:0 0 4px;color:var(--ink)}
+.tl-list{list-style:none;margin:0;padding:0}
+.tl-item{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:4px 20px;padding:14px 0 14px 14px;border-top:1px solid var(--line);border-left:4px solid var(--c,var(--line))}
+.tl-item .d{font-family:var(--kai);font-size:18px;color:var(--c);font-variant-numeric:tabular-nums;padding-top:2px}
+.tl-item h3{font-size:19px;margin:0}
+.tl-item p{margin:4px 0 0}
+.tl-end-row{font-family:var(--kai);color:var(--stamp);font-size:17px;padding:10px 0 10px 14px;border-top:2px solid var(--stamp)}
+@media (max-width:640px){.tl-item{grid-template-columns:minmax(0,1fr)}}
+.tickets .tk-body{min-height:212px}
+@media (max-width:640px){.tickets .tk-body{min-height:0}}

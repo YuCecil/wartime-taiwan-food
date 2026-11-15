@@ -123,7 +123,7 @@ function home(anchor) {
       <img class="mascot mascot-hero" src="assets/img/mascot.png" alt="番薯仔：戴斗笠、提竹籃的番薯，本站的導覽員" width="382" height="520">
     </div>
     <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
-      <div class="pb-head"><b>米穀通帳</b><span>本站整理，非原件</span></div>
+      <div class="pb-head"><b>米穀通帳</b></div>
       ${rows.map(s => `<a class="pb-row" data-cat="${catKey(catOf(s.topic))}" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
       <div class="pb-foot" aria-hidden="true"></div>
       <div class="seal" aria-hidden="true">檢<br>印</div>
@@ -136,67 +136,53 @@ function home(anchor) {
     ${toc}
   </section>
 
-  <section class="sec" id="timeline">
-    <h2>時間軸</h2>
-    <div class="chips" id="tl-chips" role="group" aria-label="依主題篩選"></div>
-    <div class="tl-box"><div class="tl" id="tl"></div></div>
-    <div class="tl-detail" id="tl-detail" aria-live="polite"></div>
-  </section>
-
-  <section class="sec" id="map">
-    <h2>地圖</h2>
-    <div id="map-el"></div>
-  </section>
-
   <section class="sec" id="more">
     <h2>更多</h2>
     <div class="more" style="margin-top:20px">
+      <a href="#/timeline"><b>時間軸</b><span>${W.timeline.length} 件事，照年份排</span></a>
+      <a href="#/map"><b>地圖</b><span>故事發生在哪裡</span></a>
       <a href="#/numbers"><b>數字</b><span>米價、配給量、黑市案件</span></a>
       <a href="#/debates"><b>研究爭論</b><span>研究者看法不同的地方</span></a>
       <a href="#/library"><b>資料庫</b><span>${c.sources} 份研究與史料</span></a>
     </div>
   </section>`;
-  drawTimeline();
-  drawMap();
   if (anchor) setTimeout(() => document.getElementById(anchor)?.scrollIntoView(), 300);
   else scrollTo(0, 0);
 }
 
-let tlIdx = 0, tlCat = "全部";
+let tlCat = "全部";
+function timelinePage() {
+  setNav("tl");
+  app.innerHTML = `<section class="sec" style="border:0"><h1>時間軸</h1>
+    <div class="chips" id="tl-chips" role="group" aria-label="依主題篩選"></div>
+    <div id="tl-list"></div></section>`;
+  drawTimeline(); scrollTo(0, 0);
+}
 function drawTimeline() {
   const all = W.timeline.slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const cats = ["全部", ...Object.keys(CATS).filter(k => all.some(e => e.category === k))];
   document.getElementById("tl-chips").innerHTML = cats.map(k => `<button type="button" class="chip ${k === tlCat ? "on" : ""}" ${k !== "全部" ? `data-cat="${catKey(k)}"` : ""} data-k="${k}" aria-pressed="${k === tlCat}">${k === "全部" ? "全部" : `<span class="ch">${CATS[k].ch}</span>${k}`}</button>`).join("");
-  document.querySelectorAll("#tl-chips .chip").forEach(b => b.onclick = () => { tlCat = b.dataset.k; tlIdx = 0; drawTimeline(); });
+  document.querySelectorAll("#tl-chips .chip").forEach(b => b.onclick = () => { tlCat = b.dataset.k; drawTimeline(); });
   const evs = all.filter(e => tlCat === "全部" || e.category === tlCat);
-  const years = []; for (let y = Y0; y < Y1; y++) years.push(y);
-  const rows = [];
-  const dots = evs.map((e, i) => {
-    const x = yearPos(e.date);
-    let r = 0; while (rows[r] !== undefined && x - rows[r] < 2.2) r++; rows[r] = x;
-    return `<button class="tl-ev" data-cat="${catKey(e.category)}" data-i="${i}" style="left:${x}%;top:${56 - r * 18}px" aria-label="${esc(e.date)} ${esc(e.title)}"></button>`;
-  }).join("");
-  document.getElementById("tl").innerHTML = `<div class="tl-axis"></div>
-    ${years.map(y => `<div class="tl-year" style="left:${yearPos(y + "-01-01")}%">${y}</div>`).join("")}
-    <div class="tl-end" style="left:${yearPos(WAR_END)}%"><span>終戰</span></div>${dots}`;
-  const show = i => {
-    tlIdx = (i + evs.length) % evs.length;
-    const e = evs[tlIdx];
-    document.querySelectorAll(".tl-ev").forEach(b => b.classList.toggle("on", +b.dataset.i === tlIdx));
-    document.getElementById("tl-detail").dataset.cat = catKey(e.category);
-    document.getElementById("tl-detail").innerHTML = `<div class="d">${esc(String(e.date).replace(/-/g, "."))}</div>
-      <div><h3>${esc(e.title)}</h3><p>${esc(e.desc)}</p><p class="small">${e.topic ? "故事：" + pageLink(e.topic) + "。" : ""}出處：${refLink(e.source)}</p></div>
-      <div class="tl-nav"><button type="button">前一則</button><button type="button">下一則</button></div>`;
-    const nb = document.querySelectorAll(".tl-nav button");
-    nb[0].onclick = () => show(tlIdx - 1); nb[1].onclick = () => show(tlIdx + 1);
-  };
-  document.querySelectorAll(".tl-ev").forEach(b => b.onclick = () => show(+b.dataset.i));
-  show(tlIdx);
+  const byYear = {};
+  evs.forEach(e => (byYear[String(e.date).slice(0, 4)] ||= []).push(e));
+  let endShown = false;
+  document.getElementById("tl-list").innerHTML = Object.entries(byYear).map(([y, list]) => `<div class="tl-year-g"><h2 class="tl-y">${y}</h2><ol class="tl-list">${list.map(e => {
+    let mark = "";
+    if (!endShown && String(e.date) > WAR_END) { endShown = true; mark = `<li class="tl-end-row">1945.08.15 終戰</li>`; }
+    const md = String(e.date).slice(5).replace(/-/g, ".") || "";
+    return `${mark}<li class="tl-item" data-cat="${catKey(e.category)}"><span class="d">${esc(md)}</span><div><h3>${esc(e.title)}</h3><p>${esc(e.desc)}</p><p class="small">${e.topic ? "故事：" + pageLink(e.topic) + "。" : ""}出處：${refLink(e.source)}</p></div></li>`;
+  }).join("")}</ol></div>`).join("");
 }
 
+function mapPage() {
+  setNav("map");
+  app.innerHTML = `<section class="sec" style="border:0"><h1>地圖</h1><div id="map-el"></div></section>`;
+  drawMap(); scrollTo(0, 0);
+}
 function drawMap() {
   if (!window.L || !W.places.length) return;
-  const m = L.map("map-el", { scrollWheelZoom: false, zoomSnap: 0.25, zoomDelta: 0.5 });
+  const m = L.map("map-el", { scrollWheelZoom: true, touchZoom: true, zoomSnap: 0.25, zoomDelta: 0.5 });
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18,
   }).addTo(m);
@@ -271,7 +257,7 @@ function page(p) {
   const evs = W.timeline.filter(e => e.topic === p.id).sort((a, b) => String(a.date).localeCompare(String(b.date)));
   if (evs.length) aside += `<div class="box"><h2>這個故事的時間軸</h2>${evs.map(e => `<div class="mini-ev"><b>${esc(e.date)}</b><span>${esc(e.title)}</span></div>`).join("")}</div>`;
   const pls = W.places.filter(x => x.topic === p.id);
-  if (pls.length) aside += `<div class="box"><h2>發生在</h2>${pls.map(x => `<div>${esc(x.name)}</div>`).join("")}<a href="#/#map" style="margin-top:6px">在地圖上看</a></div>`;
+  if (pls.length) aside += `<div class="box"><h2>發生在</h2>${pls.map(x => `<div>${esc(x.name)}</div>`).join("")}<a href="#/map" style="margin-top:6px">在地圖上看</a></div>`;
   const rel = [...new Set([...(p.topics || []), ...(p.entities || []), ...back])].filter(id => id !== p.id && byId[id] && byId[id].type !== "overview");
   const relT = rel.filter(id => byId[id].type !== "source"), relS = rel.filter(id => byId[id].type === "source");
   if (relT.length) aside += `<div class="box"><h2>${p.type === "source" ? "用在這些故事" : "相關故事與名詞"}</h2>${relT.map(id => `<a href="#/p/${id}">${esc(byId[id].title)}</a>`).join("")}</div>`;
@@ -346,6 +332,8 @@ function route() {
   if ((m = h.match(/^#\/p\/([a-z0-9\-]+)/)) && byId[m[1]]) return page(byId[m[1]]);
   if (h.startsWith("#/library")) return library();
   if (h.startsWith("#/about")) return about();
+  if (h.startsWith("#/timeline") || h.startsWith("#/#timeline")) return timelinePage();
+  if (h.startsWith("#/map") || h.startsWith("#/#map")) return mapPage();
   if (h.startsWith("#/numbers")) return numbers();
   if (h.startsWith("#/debates")) return debates();
   if (h.startsWith("#/graph")) return graph();
