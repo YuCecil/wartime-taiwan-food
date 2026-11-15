@@ -2,7 +2,18 @@
    新增頁面不需要改這個檔案。 */
 const TYPE_NAME = { topic: "故事", entity: "名詞", source: "資料卡", question: "問答", overview: "總論" };
 const Y0 = 1937, Y1 = 1950, WAR_END = "1945-08-15";
-const INK = "#1E2A3F", INDIGO = "#34548A", INDIGO2 = "#8FA3C4", STAMP = "#B23A2E", LINE = "#C7CDC4", MUTED = "#5E6878";
+const INK = "#1E2A3F", INDIGO = "#34548A", INDIGO2 = "#7489AE", STAMP = "#B23A2E", LINE = "#C7CDC4", MUTED = "#5E6878";
+/* 配給券分類：顏色定義在 style.css 的 --rice-ink 等變數；新增分類要兩邊一起改（CLAUDE.md 第 8 節） */
+const CATS = {
+  "主食": { key: "rice", ch: "米" }, "副食": { key: "meat", ch: "肉" }, "制度": { key: "rule", ch: "令" },
+  "市場": { key: "market", ch: "市" }, "生活": { key: "life", ch: "家" }, "戰後": { key: "post", ch: "後" },
+};
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const catKey = c => (CATS[c] || { key: "rule" }).key;
+const catInk = c => cssVar(`--${catKey(c)}-ink`) || INDIGO;
+const catOf = id => byId[id]?.category;
+/* 中文標題在「：？，」後分段，每段不拆開，只在段與段之間換行，避免切在詞中間 */
+const phrase = t => String(t ?? "").split(/(?<=[：？，])/).map(x => `<span class="ph">${esc(x)}</span>`).join("");
 
 let W = null, byId = {}, backlinks = {};
 let live = { charts: [], map: null, graph: null };
@@ -37,7 +48,7 @@ function setNav(key) {
 /* ---------- 圖表 ---------- */
 function chartBlock(s, inPage) {
   const h = inPage ? "h3" : "h2";
-  return `<figure class="chart" data-chart="${esc(s.id)}" style="margin-left:0;margin-right:0">
+  return `<figure class="chart" data-chart="${esc(s.id)}" data-cat="${catKey(catOf(s.topic))}" style="margin-left:0;margin-right:0">
     <${h}>${esc(s.title)}</${h}><div class="u">單位：${esc(s.unit)}</div>
     <div class="cv"><canvas role="img" aria-label="${esc(s.title)}"></canvas></div>
     <figcaption class="note">${esc(s.note || "")} 出處：${refLink(s.source)}${!inPage && s.topic ? `。故事：${pageLink(s.topic)}` : ""}</figcaption></figure>`;
@@ -50,6 +61,7 @@ function mountCharts(root) {
     if (!s) return;
     const isLine = s.type === "line";
     const many = s.series.length > 1;
+    const base = s.topic ? catInk(catOf(s.topic)) : INDIGO;
     const c = new Chart(el.querySelector("canvas"), {
       type: isLine ? "line" : "bar",
       data: {
@@ -57,8 +69,8 @@ function mountCharts(root) {
         datasets: s.series.map((ser, i) => ({
           label: ser.name, data: ser.values, borderRadius: 0, barPercentage: .62,
           // 單一數列時，stats.json 的 highlight 指定的那一根用印泥紅，讓眼睛先看到重點
-          backgroundColor: many ? [INK, INDIGO, INDIGO2][i] : ser.values.map((_, j) => j === s.highlight ? STAMP : INDIGO),
-          borderColor: many ? [INK, INDIGO, INDIGO2][i] : INDIGO, pointRadius: 4, pointBackgroundColor: STAMP,
+          backgroundColor: many ? [INK, INDIGO, INDIGO2][i] : ser.values.map((_, j) => j === s.highlight ? STAMP : base),
+          borderColor: many ? [INK, INDIGO, INDIGO2][i] : base, pointRadius: 4, pointBackgroundColor: STAMP,
         })),
       },
       options: {
@@ -91,10 +103,14 @@ function home(anchor) {
   const topics = W.pages.filter(p => p.type === "topic").sort((a, b) => (a.period?.[0] || 0) - (b.period?.[0] || 0) || (a.period?.[1] || 0) - (b.period?.[1] || 0));
   const rows = W.stats.filter(s => s.big).sort((a, b) => (a.bigYear || 0) - (b.bigYear || 0));
   const c = W.counts;
-  const item = t => `<li><a href="#/p/${t.id}"><span class="yr">${(t.period || []).join("–")}</span><span><h4 class="toc-t">${esc(t.title)}</h4><p>${esc(t.summary)}</p></span></a></li>`;
+  let no = 0;
+  const item = t => { no++; const k = CATS[t.category] || CATS["制度"]; return `<li><a class="ticket" data-cat="${k.key}" href="#/p/${t.id}">
+    <span class="stub" aria-hidden="true"><span class="ch">${k.ch}</span><span class="no">No.${String(no).padStart(2, "0")}</span></span>
+    <span class="tk-body"><h4 class="toc-t">${phrase(t.title)}</h4><p>${esc(t.summary)}</p>
+    <span class="tk-meta">${esc(t.category)}・${(t.period || []).join("–")}・${(t.sources || []).length} 份資料</span></span></a></li>`; };
   const war = topics.filter(t => !isPost(t)), post = topics.filter(isPost);
   const toc = [["戰時（1937–1945）", war], ["戰後（1945–1949）", post]].filter(g => g[1].length)
-    .map(([name, list]) => `<div class="toc-group"><h3>${name}</h3><ol class="toc">${list.map(item).join("")}</ol></div>`).join("");
+    .map(([name, list]) => `<div class="toc-group"><h3>${name}</h3><ol class="tickets">${list.map(item).join("")}</ol></div>`).join("");
   app.innerHTML = `
   <section class="hero">
     <div>
@@ -104,7 +120,7 @@ function home(anchor) {
     </div>
     <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
       <div class="pb-head"><b>米穀通帳</b><span>本站整理，非原件</span></div>
-      ${rows.map(s => `<a class="pb-row" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
+      ${rows.map(s => `<a class="pb-row" data-cat="${catKey(catOf(s.topic))}" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
       <div class="pb-foot">每一行都連到對應的故事，數字的出處寫在故事裡。</div>
       <div class="seal" aria-hidden="true">檢<br>印</div>
     </div>
@@ -118,14 +134,15 @@ function home(anchor) {
 
   <section class="sec" id="timeline">
     <h2>時間軸</h2>
-    <p class="lead">點圓點看那一刻發生了什麼。紅線是 1945 年 8 月終戰。</p>
+    <p class="lead">點圓點看那一刻發生了什麼。紅線是 1945 年 8 月終戰。用下面的配給券顏色篩選主題。</p>
+    <div class="chips" id="tl-chips" role="group" aria-label="依主題篩選"></div>
     <div class="tl-box"><div class="tl" id="tl"></div></div>
     <div class="tl-detail" id="tl-detail" aria-live="polite"></div>
   </section>
 
   <section class="sec" id="map">
     <h2>地圖</h2>
-    <p class="lead">黑市、疏開地、被減配的城市。點一下看那裡發生了什麼${W.places.some(p => isPost(byId[p.topic])) ? "。紅點是戰時，藍點是戰後" : ""}。</p>
+    <p class="lead">黑市、疏開地、被減配的城市。點一下看那裡發生了什麼，圓點的顏色就是它所屬故事的配給券顏色。</p>
     <div id="map-el"></div>
   </section>
 
@@ -144,16 +161,19 @@ function home(anchor) {
   else scrollTo(0, 0);
 }
 
-let tlIdx = 0;
+let tlIdx = 0, tlCat = "全部";
 function drawTimeline() {
-  const evs = W.timeline.slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const all = W.timeline.slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const cats = ["全部", ...Object.keys(CATS).filter(k => all.some(e => e.category === k))];
+  document.getElementById("tl-chips").innerHTML = cats.map(k => `<button type="button" class="chip ${k === tlCat ? "on" : ""}" ${k !== "全部" ? `data-cat="${catKey(k)}"` : ""} data-k="${k}" aria-pressed="${k === tlCat}">${k === "全部" ? "全部" : `<span class="ch">${CATS[k].ch}</span>${k}`}</button>`).join("");
+  document.querySelectorAll("#tl-chips .chip").forEach(b => b.onclick = () => { tlCat = b.dataset.k; tlIdx = 0; drawTimeline(); });
+  const evs = all.filter(e => tlCat === "全部" || e.category === tlCat);
   const years = []; for (let y = Y0; y < Y1; y++) years.push(y);
   const rows = [];
   const dots = evs.map((e, i) => {
     const x = yearPos(e.date);
     let r = 0; while (rows[r] !== undefined && x - rows[r] < 2.2) r++; rows[r] = x;
-    const post = String(e.date) >= "1945-08";
-    return `<button class="tl-ev ${post ? "post" : ""}" data-i="${i}" style="left:${x}%;top:${56 - r * 18}px" aria-label="${esc(e.date)} ${esc(e.title)}"></button>`;
+    return `<button class="tl-ev" data-cat="${catKey(e.category)}" data-i="${i}" style="left:${x}%;top:${56 - r * 18}px" aria-label="${esc(e.date)} ${esc(e.title)}"></button>`;
   }).join("");
   document.getElementById("tl").innerHTML = `<div class="tl-axis"></div>
     ${years.map(y => `<div class="tl-year" style="left:${yearPos(y + "-01-01")}%">${y}</div>`).join("")}
@@ -162,6 +182,7 @@ function drawTimeline() {
     tlIdx = (i + evs.length) % evs.length;
     const e = evs[tlIdx];
     document.querySelectorAll(".tl-ev").forEach(b => b.classList.toggle("on", +b.dataset.i === tlIdx));
+    document.getElementById("tl-detail").dataset.cat = catKey(e.category);
     document.getElementById("tl-detail").innerHTML = `<div class="d">${esc(String(e.date).replace(/-/g, "."))}</div>
       <div><h3>${esc(e.title)}</h3><p>${esc(e.desc)}</p><p class="small">${e.topic ? "故事：" + pageLink(e.topic) + "。" : ""}出處：${refLink(e.source)}</p></div>
       <div class="tl-nav"><button type="button">前一則</button><button type="button">下一則</button></div>`;
@@ -180,7 +201,7 @@ function drawMap() {
   }).addTo(m);
   W.places.forEach(p => {
     const t = byId[p.topic];
-    L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "", html: `<div class="pin ${isPost(t) ? "post" : ""}"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] }), title: p.name })
+    L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "", html: `<div class="pin" data-cat="${catKey(t?.category)}"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] }), title: p.name })
       .addTo(m).bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.desc)}<br>${t ? "故事：" + pageLink(p.topic) + "<br>" : ""}<span class="small">出處：${refLink(p.source)}</span>`);
   });
   m.fitBounds(W.places.map(p => [p.lat, p.lng]), { padding: [30, 30] });
@@ -206,7 +227,7 @@ function graph() {
   setNav("graph");
   app.innerHTML = `<section class="sec" style="border:0"><h1>關係網</h1>
     <p class="lead">每份資料、每個故事怎麼連在一起。可以拖拉節點，點一下打開那一頁；滑鼠移到小點上會顯示資料名稱。</p>
-    <div class="legend"><span><i class="dot" style="background:${STAMP}"></i>故事</span><span><i class="dot" style="background:${INDIGO}"></i>名詞</span><span><i class="dot" style="background:${INDIGO2}"></i>資料卡</span></div>
+    <div class="legend"><span>故事（依配給券顏色）</span><span><i class="dot" style="background:${INDIGO}"></i>名詞</span><span><i class="dot" style="background:${INDIGO2}"></i>資料卡</span></div>
     <div id="graph-el"></div></section>`;
   const style = {
     topic: { color: STAMP, size: 22, font: 22 }, entity: { color: INDIGO, size: 13, font: 16 },
@@ -215,7 +236,7 @@ function graph() {
   const ps = W.pages.filter(p => style[p.type]);
   const ids = new Set(ps.map(p => p.id));
   const nodes = new vis.DataSet(ps.map(p => {
-    const s = style[p.type];
+    const s = p.type === "topic" ? { ...style.topic, color: catInk(p.category) } : style[p.type];
     return { id: p.id, label: p.type === "source" ? undefined : p.title.split("：")[0].split("？")[0],
       title: p.type === "source" ? `${shortName(p)}｜${p.title}` : p.title, shape: "dot", size: s.size,
       color: { background: s.color, border: s.color, highlight: { background: s.color, border: INK }, hover: { background: s.color, border: INK } },
@@ -258,9 +279,11 @@ function page(p) {
 
   const facts = [p.period ? p.period.join("–") : "", p.kind || "", p.sources ? `根據 ${p.sources.length} 份資料` : "", p.updated ? `更新於 ${p.updated}` : ""].filter(Boolean).map(esc).join("，");
   const sub = p.type === "source" ? `${esc(p.author)}，${esc(p.year)}。${esc(p.venue)}` : `${esc(p.summary || "")}${facts && p.type !== "overview" ? `<br><span class="small">${facts}</span>` : ""}`;
-  app.innerHTML = `<div class="page"><div>
+  app.innerHTML = `<div class="page" ${p.type === "topic" ? `data-cat="${catKey(p.category)}"` : ""}><div>
     <div class="crumb"><a href="#/">首頁</a>　${TYPE_NAME[p.type] || ""}</div>
-    <header class="page-h"><h1>${esc(p.title)}</h1>${sub ? `<div class="meta">${sub}</div>` : ""}</header>
+    <header class="page-h ${p.type === "topic" ? "ticket-h" : ""}" ${p.type === "topic" ? `data-cat="${catKey(p.category)}"` : ""}>
+      ${p.type === "topic" ? `<span class="stub" aria-hidden="true"><span class="ch">${(CATS[p.category] || CATS["制度"]).ch}</span><span class="no">${esc(p.category)}</span></span>` : ""}
+      <div class="ph-body"><h1>${phrase(p.title)}</h1>${sub ? `<div class="meta">${sub}</div>` : ""}</div></header>
     <article class="md">${renderMd(p.body)}</article>
     ${aside ? `<aside class="page-info" aria-label="這一頁的相關資訊">${aside}</aside>` : ""}
   </div></div>`;
