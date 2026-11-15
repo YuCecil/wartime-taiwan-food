@@ -1439,6 +1439,11 @@
    "date": "2026-11-15",
    "kind": "ingest",
    "title": "第一批公開資料：5 個 Haiku 平行蒐集 21 份"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "site",
+   "title": "修正：地圖底圖改用 OpenStreetMap、關係網字級、手機版主題頁溢出、戰後米價改為長條圖（時間間隔不等）"
   }
  ],
  "timeline": [
@@ -1789,7 +1794,7 @@
   {
    "id": "postwar-rice-price",
    "title": "戰後臺北的米，一斤多少錢？",
-   "type": "line",
+   "type": "bar",
    "unit": "舊臺幣元／斤",
    "labels": [
     "1946 年 1 月",

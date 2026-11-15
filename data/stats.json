@@ -144,7 +144,7 @@
  {
   "id": "postwar-rice-price",
   "title": "戰後臺北的米，一斤多少錢？",
-  "type": "line",
+  "type": "bar",
   "unit": "舊臺幣元／斤",
   "labels": [
    "1946 年 1 月",
