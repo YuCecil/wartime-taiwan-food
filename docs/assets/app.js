@@ -90,6 +90,8 @@ function renderMd(body) {
     const s = W.stats.find(x => x.id === id);
     return s ? "\n\n" + chartBlock(s, true).replace(/\n\s*/g, " ") + "\n\n" : "";
   });
+  t = t.replace(/\{\{img:([\w\-.]+)\|([^}]*)\}\}/g, (_, f, cap) =>
+    `\n\n<figure class="inline-fig"><img src="assets/img/${esc(f)}" alt="${esc(cap)}" loading="lazy" decoding="async"><figcaption>${esc(cap)}</figcaption></figure>\n\n`);
   t = t.replace(/\[\[([a-z0-9\-]+)(?:\|([^\]]*))?\]\]/g, (_, id, label) => refLink(id, label));
   return marked.parse(t);
 }

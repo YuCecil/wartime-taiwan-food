@@ -165,6 +165,12 @@ def main():
         for c in re.findall(r"\{\{chart:([\w\-]+)\}\}", p["body"]):
             if c not in chart_ids:
                 err(p["path"].name, f"嵌入了不存在的圖表 {c}")
+        imgs = re.findall(r"\{\{img:([\w\-.]+)\|", p["body"])
+        if len(imgs) > 1:
+            err(p["path"].name, "內文插圖最多一張")
+        for f in imgs:
+            if not (Path(__file__).resolve().parent.parent / "docs/assets/img" / f).exists():
+                err(p["path"].name, f"內文插圖檔案不存在 {f}")
 
     for line in errors + warns:
         print(line)

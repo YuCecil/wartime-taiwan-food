@@ -18,4 +18,6 @@
 - 不畫真實人物的長相（研究者、林獻堂等歷史人物都不畫成肖像），只畫無名的一般人。
 - 存檔：原圖放 `raw/images/<故事id>.jpeg`（不上傳）；網站用的縮圖放 `docs/assets/img/<故事id>.jpg`，寬 1000px、JPEG 品質 70（`sips -Z 1000 -s format jpeg -s formatOptions 70`）。
 - 在故事頁 frontmatter 加 `image: <故事id>.jpg` 與 `imageAlt: 木刻版畫風插畫：……`（用一兩句話描述畫面，給看不到圖的人）。
+- 內文插圖（每個故事最多一張）：原圖 `raw/images/<故事id>-2.jpeg`、網站用 `docs/assets/img/<故事id>-2.jpg`，在對應段落後面另起一行寫 `{{img:<故事id>-2.jpg|一句話說明畫面}}`。畫的事要在那一段裡找得到出處。
+- Gemini 同一個對話生到某個數量就會拒絕（「已達上限」），換新對話，提示詞要寫完整畫風，不要只寫「同樣的畫風」。
 - 不加「AI 生成」之類的備註。

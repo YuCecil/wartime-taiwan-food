@@ -28,6 +28,8 @@ updated: 2026-11-15
 
 1949 年 6 月 15 日，政府實施幣制改革，發行新臺幣，規定發行上限 2 億元（[[s-2006-wu-taiwan-hyperinflation]] 頁 151），舊臺幣 4 萬元換新臺幣 1 元（[[s-2021-jia-currency-reform-1949]]）。從 1945 年 1 月算到 1950 年底，躉售物價總共漲了 218,455 倍（[[s-2006-wu-taiwan-hyperinflation]] 頁 131）。
 
+{{img:t-inflation-2.jpg|抱著一疊疊舊臺幣到銀行，四萬元換新臺幣一元。}}
+
 ## 數字會說話
 
 {{chart:old-twd-issue}}

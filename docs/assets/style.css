@@ -272,3 +272,6 @@ aside dd{margin:0}
   .log-row{grid-template-columns:6em 1fr}
   .log-row i{display:none}
 }
+.inline-fig{margin:30px 0}
+.inline-fig img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.inline-fig figcaption{font-family:var(--kai);font-size:15.5px;color:var(--muted);margin-top:8px;line-height:1.6}
