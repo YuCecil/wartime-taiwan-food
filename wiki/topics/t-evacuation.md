@@ -7,7 +7,7 @@ category: 生活
 period: [1943, 1945]
 summary: 為了躲空襲搬到鄉下，不少日本人得靠臺灣農家吃飯、過日子。
 image: t-evacuation.jpg
-imageAlt: 木刻版畫風插畫：鄉下三合院的曬穀場，疏開來的家庭和農家同桌吃飯，遠方天空有飛機。
+imageAlt: 木刻版畫風插畫：三合院門口，戴斗笠的老農夫把一籃番薯遞給從城裡疏散來的母親和兩個孩子，旁邊放著他們的包袱。
 sources: [s-2017-tseng-table-war, s-1996-kondo-total-war, s-2024-takada-building-evacuation, s-2020-ohora-tainan-raid, s-2025-thomas-taipei-raid, s-2021-schneider-war-height-japan]
 updated: 2026-11-15
 ---

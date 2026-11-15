@@ -110,3 +110,7 @@
 - 內文插圖說明（t-evacuation、t-black-market、t-postwar-famine、t-rice-ration）拿掉原文沒有的細節
 - timeline 7 筆 category 改成與其 topic 頁一致；t-inflation 的（推論）移到句首
 - 補曾品滄（s-2017-tseng-table-war）引用頁碼：各主題頁、實體頁、overview
+
+## [2026-11-15] rule | 站標改番薯圖示、疏開頁首圖換新
+- 左上角改成木刻風番薯圖示（docs/assets/img/logo-sweetpotato.png）
+- t-evacuation 頁首圖換成「老農夫把番薯遞給疏開來的一家人」（對應吳新榮「農民會送番薯來」），舊圖畫的「同桌吃飯」原文沒有
