@@ -284,11 +284,12 @@ aside dd{margin:0}
 .tl-year-g{max-width:880px;margin:26px 0 0}
 .tl-y{font-family:var(--kai);font-size:30px;margin:0 0 4px;color:var(--ink)}
 .tl-list{list-style:none;margin:0;padding:0}
-.tl-item{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:4px 20px;padding:14px 0 14px 14px;border-top:1px solid var(--line);border-left:4px solid var(--c,var(--line))}
+.tl-item{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:4px 20px;padding:14px 0;border-top:1px solid var(--line)}
+.tl-item .d::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:8px;vertical-align:2px}
 .tl-item .d{font-family:var(--kai);font-size:18px;color:var(--c);font-variant-numeric:tabular-nums;padding-top:2px}
 .tl-item h3{font-size:19px;margin:0}
 .tl-item p{margin:4px 0 0}
-.tl-end-row{font-family:var(--kai);color:var(--stamp);font-size:17px;padding:10px 0 10px 14px;border-top:2px solid var(--stamp)}
+.tl-end-row{font-family:var(--kai);color:var(--stamp);font-size:17px;padding:10px 0;border-top:2px solid var(--stamp)}
 @media (max-width:640px){.tl-item{grid-template-columns:minmax(0,1fr)}}
 .tickets .tk-body{min-height:212px}
 @media (max-width:640px){.tickets .tk-body{min-height:0}}
@@ -301,3 +302,5 @@ aside dd{margin:0}
 .logo-t b{font-size:23px;letter-spacing:.06em}
 .logo-t small{font-family:var(--kai);font-weight:400;font-size:13px;color:var(--muted);letter-spacing:.12em;margin-top:2px}
 @media (prefers-reduced-motion:reduce){.logo-seal{transition:none}}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--ink);color:#F6F7F3;padding:6px 12px}
+.skip:focus{left:12px}

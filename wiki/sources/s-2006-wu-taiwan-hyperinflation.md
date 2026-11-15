@@ -52,4 +52,4 @@ added: 2026-11-15
 - 作者的「定額本票」（1948–1949，表 2）是否計入鈔券發行，原文未說明。
 - 表 2 之外的數字（如頁 141 的機關團體放款 38,059.7 百萬元）月份不明，需回原註核對。
 - 圖 1–4 只有圖，沒有可讀的數字；本卡不記圖中數值。
-- 筆記：`/Users/yuhongyi/Downloads/TAICA生成式AI_W09換你當老闆/wartime-taiwan-food/raw/notes/s-2006-wu-taiwan-hyperinflation.md`
+- 筆記：`raw/notes/s-2006-wu-taiwan-hyperinflation.md`

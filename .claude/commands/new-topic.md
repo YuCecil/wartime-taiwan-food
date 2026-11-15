@@ -29,6 +29,7 @@ argument-hint: "<主題，例如：戰時的砂糖>"
 - 「還不知道的事」列出缺口。
 
 ## 4.5 頁首插圖（選做）
+- 沒有圖也算完成：frontmatter 不寫 `image`，網站會自動不顯示圖片區；在回報裡寫「缺插圖」，並附上填好的提示詞。
 - 照 `templates/illustration-prompt.md` 生成一張木刻版畫風插圖（需要能操作瀏覽器使用圖像生成工具；不能的話，把填好的提示詞寫在回報裡，請使用者或主 session 生成）。
 - 存檔與 frontmatter 照 CLAUDE.md 8.2。
 

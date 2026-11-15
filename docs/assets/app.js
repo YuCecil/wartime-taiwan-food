@@ -1,6 +1,6 @@
 /* 戰時餐桌：網站程式。資料全部來自 data/wiki.json（由 tools/build.py 產生）。
    新增頁面不需要改這個檔案。 */
-const figure = (src, alt, cls = "") => `<figure class="art ${cls}"><img src="assets/img/${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></figure>`;
+const figure = (src, alt, cls = "", eager = false) => `<figure class="art ${cls}"><img src="assets/img/${esc(src)}" alt="${esc(alt)}" loading="${eager ? "eager" : "lazy"}" decoding="async"></figure>`;
 const TYPE_NAME = { topic: "故事", entity: "名詞", source: "資料卡", question: "問答", overview: "總論" };
 const Y0 = 1937, Y1 = 1950, WAR_END = "1945-08-15";
 const INK = "#1E2A3F", INDIGO = "#34548A", INDIGO2 = "#7489AE", STAMP = "#B23A2E", LINE = "#C7CDC4", MUTED = "#5E6878";
@@ -43,7 +43,7 @@ function cleanup() {
   if (live.graph) { live.graph.destroy(); live.graph = null; }
 }
 function setNav(key) {
-  document.querySelectorAll(".nav a").forEach(a => a.classList.toggle("on", a.dataset.k === key));
+  document.querySelectorAll(".nav a").forEach(a => { const on = a.dataset.k === key; a.classList.toggle("on", on); on ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"); });
 }
 
 /* ---------- 圖表 ---------- */
@@ -122,14 +122,14 @@ function home(anchor) {
       <a class="go" href="#/#stories">從故事開始讀</a>
       <img class="mascot mascot-hero" src="assets/img/mascot.png" alt="番薯仔：戴斗笠、提竹籃的番薯，本站的導覽員" width="382" height="520">
     </div>
-    <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
+    <div class="passbook" aria-label="以配給簿形式整理的關鍵數字">
       <div class="pb-head"><b>米穀通帳</b></div>
       ${rows.map(s => `<a class="pb-row" data-cat="${catKey(catOf(s.topic))}" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
       <div class="pb-foot" aria-hidden="true"></div>
       <div class="seal" aria-hidden="true">檢<br>印</div>
     </div>
   </section>
-  ${figure("hero-queue.jpg", "木刻版畫風插畫：1940 年代的街上，婦女和孩子提著竹籃在配給所前排隊領米。", "band")}
+  ${figure("hero-queue.jpg", "木刻版畫風插畫：1940 年代的街上，婦女和孩子提著竹籃在配給所前排隊領米。", "band", true)}
 
   <section class="sec" id="stories">
     <h2>故事</h2>
@@ -162,7 +162,7 @@ function drawTimeline() {
   const all = W.timeline.slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const cats = ["全部", ...Object.keys(CATS).filter(k => all.some(e => e.category === k))];
   document.getElementById("tl-chips").innerHTML = cats.map(k => `<button type="button" class="chip ${k === tlCat ? "on" : ""}" ${k !== "全部" ? `data-cat="${catKey(k)}"` : ""} data-k="${k}" aria-pressed="${k === tlCat}">${k === "全部" ? "全部" : `<span class="ch">${CATS[k].ch}</span>${k}`}</button>`).join("");
-  document.querySelectorAll("#tl-chips .chip").forEach(b => b.onclick = () => { tlCat = b.dataset.k; drawTimeline(); });
+  document.querySelectorAll("#tl-chips .chip").forEach(b => b.onclick = () => { tlCat = b.dataset.k; drawTimeline(); document.querySelector(`#tl-chips .chip[data-k="${tlCat}"]`)?.focus(); });
   const evs = all.filter(e => tlCat === "全部" || e.category === tlCat);
   const byYear = {};
   evs.forEach(e => (byYear[String(e.date).slice(0, 4)] ||= []).push(e));
@@ -211,6 +211,14 @@ function debates() {
 }
 function graph() {
   setNav("graph");
+  if (!window.vis) {  /* 關係網函式庫很大，只在進這頁時才載入 */
+    app.innerHTML = `<p class="loading">關係網載入中…</p>`;
+    const s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js";
+    s.onload = () => { if (location.hash.startsWith("#/graph")) graph(); };
+    document.head.appendChild(s);
+    return;
+  }
   app.innerHTML = `<section class="sec" style="border:0"><h1>關係網</h1>
     <p class="lead">每份資料、每個故事怎麼連在一起。可以拖拉節點，點一下打開那一頁；滑鼠移到小點上會顯示資料名稱。</p>
     <div class="legend"><span>故事（依配給券顏色）</span><span><i class="dot" style="background:${INDIGO}"></i>名詞</span><span><i class="dot" style="background:${INDIGO2}"></i>資料卡</span></div>
@@ -329,7 +337,12 @@ function route() {
   cleanup();
   const h = location.hash || "#/";
   let m;
-  if ((m = h.match(/^#\/p\/([a-z0-9\-]+)/)) && byId[m[1]]) return page(byId[m[1]]);
+  if ((m = h.match(/^#\/p\/([^/?#]+)/))) {
+    if (byId[m[1]]) return page(byId[m[1]]);
+    setNav("");
+    app.innerHTML = `<section class="sec" style="border:0"><h1>找不到這一頁</h1><p>網址可能打錯，或這一頁已經改名。<a href="#/">回到故事目錄</a></p></section>`;
+    return scrollTo(0, 0);
+  }
   if (h.startsWith("#/library")) return library();
   if (h.startsWith("#/about")) return about();
   if (h.startsWith("#/timeline") || h.startsWith("#/#timeline")) return timelinePage();
@@ -347,5 +360,11 @@ fetch("data/wiki.json").then(r => r.json()).then(d => {
   Object.keys(backlinks).forEach(k => backlinks[k] = [...new Set(backlinks[k])]);
   document.getElementById("built").textContent = `資料更新：${W.built}。${W.counts.sources} 份資料、${W.counts.topics} 個故事。`;
   addEventListener("hashchange", route);
+  /* 已經在 #/#stories 時再按一次「故事」，hash 不變、不會觸發 hashchange，直接捲過去 */
+  document.addEventListener("click", e => {
+    const l = e.target.closest('a[href^="#/#"]');
+    if (l && l.getAttribute("href") === location.hash) { e.preventDefault(); document.getElementById(l.getAttribute("href").slice(3))?.scrollIntoView(); }
+  });
+  document.querySelector(".skip").onclick = e => { e.preventDefault(); app.setAttribute("tabindex", "-1"); app.focus(); };
   route();
 }).catch(e => { app.innerHTML = `<p class="loading">資料載入失敗（${esc(e.message)}）。請用網頁伺服器開啟：python3 -m http.server -d docs</p>`; });
