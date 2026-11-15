@@ -90,14 +90,10 @@ function home(anchor) {
   const topics = W.pages.filter(p => p.type === "topic").sort((a, b) => (a.period?.[0] || 0) - (b.period?.[0] || 0) || (a.period?.[1] || 0) - (b.period?.[1] || 0));
   const rows = W.stats.filter(s => s.big).sort((a, b) => (a.bigYear || 0) - (b.bigYear || 0));
   const c = W.counts;
-  let lastEra = "";
-  const toc = topics.map(t => {
-    const era = isPost(t) ? "戰後　1945–1949" : "戰時　1937–1945";
-    const head = era !== lastEra ? `<li class="era">${era}</li>` : "";
-    lastEra = era;
-    return `${head}<li><a href="#/p/${t.id}"><span class="yr">${(t.period || []).join("–")}</span><span><h3>${esc(t.title)}</h3><p>${esc(t.summary)}</p></span></a></li>`;
-  }).join("");
-
+  const item = t => `<li><a href="#/p/${t.id}"><span class="yr">${(t.period || []).join("–")}</span><span><h4 class="toc-t">${esc(t.title)}</h4><p>${esc(t.summary)}</p></span></a></li>`;
+  const war = topics.filter(t => !isPost(t)), post = topics.filter(isPost);
+  const toc = [["戰時（1937–1945）", war], ["戰後（1945–1949）", post]].filter(g => g[1].length)
+    .map(([name, list]) => `<div class="toc-group"><h3>${name}</h3><ol class="toc">${list.map(item).join("")}</ol></div>`).join("");
   app.innerHTML = `
   <section class="hero">
     <div>
@@ -107,15 +103,16 @@ function home(anchor) {
     </div>
     <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
       <div class="pb-head"><b>米穀通帳</b><span>本站整理，非原件</span></div>
-      ${rows.map(s => `<a class="pb-row" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}<span class="seal" aria-hidden="true">${s.bigYear >= 1945 ? "戰後" : "配給"}</span></span></a>`).join("")}
-      <div class="pb-foot">每一行都連到對應的故事；數字出處見各故事頁。</div>
+      ${rows.map(s => `<a class="pb-row" href="#/p/${s.topic}"><span class="y">${s.bigYear}</span><span class="t">${esc(s.bigLabel)}</span><span class="v">${esc(s.big)}</span></a>`).join("")}
+      <div class="pb-foot">每一行都連到對應的故事，數字的出處寫在故事裡。</div>
+      <div class="seal" aria-hidden="true">檢<br>印</div>
     </div>
   </section>
 
   <section class="sec" id="stories">
     <h2>${c.topics} 個故事</h2>
     <p class="lead">每個故事由好幾份研究合成，寫給沒學過臺灣史的人。照時間順序讀，就是一條從配給到通膨的路。</p>
-    <ol class="toc">${toc}</ol>
+    ${toc}
   </section>
 
   <section class="sec" id="timeline">
@@ -192,21 +189,21 @@ function drawMap() {
 /* ---------- 獨立頁：數字、爭論、關係網 ---------- */
 function numbers() {
   setNav("numbers");
-  app.innerHTML = `<section class="sec" style="border:0"><h2>數字</h2>
+  app.innerHTML = `<section class="sec" style="border:0"><h1>數字</h1>
     <p class="lead">只放資料裡真的出現的數字；本站自己換算的，算法寫在圖下方。紅色那一根是最需要注意的數字。</p>
     ${W.stats.map(s => chartBlock(s)).join("")}</section>`;
   mountCharts(app); scrollTo(0, 0);
 }
 function debates() {
   setNav("debates");
-  app.innerHTML = `<section class="sec" style="border:0"><h2>研究爭論</h2>
+  app.innerHTML = `<section class="sec" style="border:0"><h1>研究爭論</h1>
     <p class="lead">同一件事，研究者有不同的解讀。這些分歧本身就是值得知道的事。</p>
     ${W.debates.map(d => `<div class="debate"><h3>${esc(d.question)}</h3><div class="pos">${d.positions.map(p => `<div>${esc(p.claim)}<small>${refLink(p.source)}</small></div>`).join("")}</div>${d.topic ? `<p class="small">相關故事：${pageLink(d.topic)}</p>` : ""}</div>`).join("")}</section>`;
   scrollTo(0, 0);
 }
 function graph() {
   setNav("graph");
-  app.innerHTML = `<section class="sec" style="border:0"><h2>關係網</h2>
+  app.innerHTML = `<section class="sec" style="border:0"><h1>關係網</h1>
     <p class="lead">每份資料、每個故事怎麼連在一起。可以拖拉節點，點一下打開那一頁；滑鼠移到小點上會顯示資料名稱。</p>
     <div class="legend"><span><i class="dot" style="background:${STAMP}"></i>故事</span><span><i class="dot" style="background:${INDIGO}"></i>名詞</span><span><i class="dot" style="background:${INDIGO2}"></i>資料卡</span></div>
     <div id="graph-el"></div></section>`;
@@ -243,26 +240,26 @@ function page(p) {
   const back = (backlinks[p.id] || []).filter(id => byId[id]);
   let aside = "";
   if (p.type === "source") {
-    aside += `<div class="box"><h4>書目</h4><dl>
+    aside += `<div class="box"><h2>書目</h2><dl>
       <dt>作者</dt><dd>${esc(p.author)}</dd><dt>年份</dt><dd>${esc(p.year)}</dd><dt>出處</dt><dd>${esc(p.venue)}</dd>
       <dt>類型</dt><dd>${esc(p.kind)}</dd><dt>讀到</dt><dd><span class="depth ${esc(p.depth)}">${esc(p.depth)}</span></dd>
       <dt>可信度</dt><dd>${esc(p.reliability)}</dd><dt>取得</dt><dd>${esc(p.access)}</dd></dl>
       ${p.url && p.url !== "無" ? `<p style="margin:10px 0 0"><a href="${esc(p.url)}" target="_blank" rel="noopener">打開原始頁面</a></p>` : ""}</div>`;
   } else if (p.type !== "overview") {
-    aside += `<div class="box"><h4>這一頁</h4><dl>
+    aside += `<div class="box"><h2>這一頁</h2><dl>
       ${p.period ? `<dt>時期</dt><dd>${p.period.join("–")}</dd>` : ""}
       ${p.kind ? `<dt>類型</dt><dd>${esc(p.kind)}</dd>` : ""}
       ${p.sources ? `<dt>根據</dt><dd>${p.sources.length} 份資料</dd>` : ""}
       ${p.updated ? `<dt>更新</dt><dd>${esc(p.updated)}</dd>` : ""}</dl></div>`;
   }
   const evs = W.timeline.filter(e => e.topic === p.id).sort((a, b) => String(a.date).localeCompare(String(b.date)));
-  if (evs.length) aside += `<div class="box"><h4>這個故事的時間軸</h4>${evs.map(e => `<div class="mini-ev"><b>${esc(e.date)}</b><span>${esc(e.title)}</span></div>`).join("")}</div>`;
+  if (evs.length) aside += `<div class="box"><h2>這個故事的時間軸</h2>${evs.map(e => `<div class="mini-ev"><b>${esc(e.date)}</b><span>${esc(e.title)}</span></div>`).join("")}</div>`;
   const pls = W.places.filter(x => x.topic === p.id);
-  if (pls.length) aside += `<div class="box"><h4>發生在</h4>${pls.map(x => `<div>${esc(x.name)}</div>`).join("")}<a href="#/#map" style="margin-top:6px">在地圖上看</a></div>`;
+  if (pls.length) aside += `<div class="box"><h2>發生在</h2>${pls.map(x => `<div>${esc(x.name)}</div>`).join("")}<a href="#/#map" style="margin-top:6px">在地圖上看</a></div>`;
   const rel = [...new Set([...(p.topics || []), ...(p.entities || []), ...back])].filter(id => id !== p.id && byId[id] && byId[id].type !== "overview");
   const relT = rel.filter(id => byId[id].type !== "source"), relS = rel.filter(id => byId[id].type === "source");
-  if (relT.length) aside += `<div class="box"><h4>${p.type === "source" ? "用在這些故事" : "相關故事與名詞"}</h4>${relT.map(id => `<a href="#/p/${id}">${esc(byId[id].title)}</a>`).join("")}</div>`;
-  if (relS.length && p.type !== "topic") aside += `<div class="box"><h4>相關資料</h4>${relS.map(id => `<a href="#/p/${id}">${esc(shortName(byId[id]))}</a>`).join("")}</div>`;
+  if (relT.length) aside += `<div class="box"><h2>${p.type === "source" ? "用在這些故事" : "相關故事與名詞"}</h2>${relT.map(id => `<a href="#/p/${id}">${esc(byId[id].title)}</a>`).join("")}</div>`;
+  if (relS.length && p.type !== "topic") aside += `<div class="box"><h2>相關資料</h2>${relS.map(id => `<a href="#/p/${id}">${esc(shortName(byId[id]))}</a>`).join("")}</div>`;
 
   const sub = p.type === "source" ? `${esc(p.author)}，${esc(p.year)}。${esc(p.venue)}` : esc(p.summary || "");
   app.innerHTML = `<div class="page"><div>
@@ -278,7 +275,7 @@ function page(p) {
 function library() {
   setNav("library");
   const src = W.pages.filter(p => p.type === "source").sort((a, b) => (a.year || 0) - (b.year || 0));
-  app.innerHTML = `<section class="sec" style="border:0"><h2>資料庫</h2>
+  app.innerHTML = `<section class="sec" style="border:0"><h1>資料庫</h1>
   <p class="lead">AI 讀過的 ${src.length} 份資料。「全文」是整篇讀完；「摘要」只讀到摘要，內容較淺；「書目」只確認這份資料存在。</p>
   <div style="overflow-x:auto"><table class="lib"><thead><tr><th>年份</th><th>資料</th><th class="hide-m">類型</th><th>讀到</th><th class="hide-m">可信度</th></tr></thead><tbody>
   ${src.map(s => `<tr><td>${esc(s.year)}</td><td><a href="#/p/${s.id}">${esc(s.title)}</a><div class="small">${esc(s.author)}</div></td><td class="hide-m">${esc(s.kind)}</td><td><span class="depth ${esc(s.depth)}">${esc(s.depth)}</span></td><td class="hide-m">${esc(s.reliability)}</td></tr>`).join("")}
@@ -288,7 +285,7 @@ function library() {
 function about() {
   setNav("about");
   const ov = byId["overview"];
-  app.innerHTML = `<section class="sec reading" style="border:0"><h2>這個網站怎麼做的</h2>
+  app.innerHTML = `<section class="sec reading" style="border:0"><h1>這個網站怎麼做的</h1>
   <p class="lead">研究論文多到人讀不完，所以讓 AI 讀，人負責找資料和提問。這個做法叫 LLM Wiki，概念來自 Andrej Karpathy。</p>
   <ol class="flow">
     <li><span><b>收集原始資料</b><br>論文、報紙、統計放在 raw 資料夾。原文有著作權，不公開。</span></li>

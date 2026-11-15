@@ -12,7 +12,7 @@ from wikilib import load_pages, links_of, load_data  # noqa: E402
 REQ = {
     "source": ["id", "type", "title", "author", "year", "kind", "venue", "url", "access", "depth", "period",
                "topics", "reliability", "added"],
-    "topic": ["id", "type", "title", "emoji", "category", "period", "summary", "sources", "updated"],
+    "topic": ["id", "type", "title", "category", "period", "summary", "sources", "updated"],
     "entity": ["id", "type", "title", "kind", "summary", "sources"],
     "question": ["id", "type", "title", "asked", "sources"],
 }
@@ -145,6 +145,13 @@ def main():
             if name == "timeline" and not re.fullmatch(r"\d{4}(-\d{2}(-\d{2})?)?", str(r.get("date", ""))):
                 err(where, f"date 格式不對：{r.get('date')}")
             if name == "stats":
+                if r.get("type") not in ("bar", "line"):
+                    err(where, f"type 只能是 bar 或 line：{r.get('type')}")
+                hl = r.get("highlight")
+                if hl is not None and not (isinstance(hl, int) and 0 <= hl < len(r.get("labels", []))):
+                    err(where, f"highlight 超出範圍：{hl}")
+                if r.get("big") and not (r.get("bigLabel") and isinstance(r.get("bigYear"), int)):
+                    err(where, "有 big 就要同時填 bigLabel 與 bigYear")
                 for s in r.get("series", []):
                     if len(s.get("values", [])) != len(r.get("labels", [])):
                         err(where, f"series「{s.get('name')}」數值個數跟 labels 不一樣")

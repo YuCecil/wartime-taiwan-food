@@ -2,7 +2,6 @@
 id: t-關鍵字
 type: topic
 title: 
-emoji: 🍚
 category: 主食
 period: [1937, 1945]
 summary: 

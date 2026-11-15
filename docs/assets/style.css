@@ -5,7 +5,7 @@
   --sheet:#F6F7F3;   /* 通帳內頁、閱讀區 */
   --ink:#1E2A3F;     /* 藍黑墨水：文字 */
   --indigo:#34548A;  /* 藍：連結、圖表 */
-  --indigo-2:#8FA3C4;/* 淡藍：圖表次要 */
+  --indigo-2:#7489AE;/* 淡藍：圖表次要（對紙張 ≥3:1） */
   --muted:#5E6878;
   --line:#C7CDC4;
   --stamp:#B23A2E;   /* 印泥紅：只用在印章與最重要的數字 */
@@ -16,6 +16,11 @@
 *{box-sizing:border-box}
 html{scroll-padding-top:72px}
 body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.85}
+::selection{background:#E6C9C4;color:var(--ink)}
+html{scrollbar-color:var(--line) var(--paper);accent-color:var(--stamp)}
+h1,h2,h3{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+.pb-row .v,.lib td,.tl-year,.mini-ev b,.log-row b,.toc .yr{font-variant-numeric:tabular-nums}
 a{color:var(--indigo);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--stamp)}
 :focus-visible{outline:2px solid var(--stamp);outline-offset:3px}
@@ -49,31 +54,28 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .pb-row .t{font-size:15px;line-height:1.55}
 .pb-row .v{font-family:var(--kai);font-weight:700;font-size:22px;white-space:nowrap;color:var(--ink)}
 .pb-row:last-child{border-bottom:0}
-.pb-foot{font-size:13px;color:var(--muted);padding-top:10px}
-.seal{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:2px solid var(--stamp);border-radius:50%;color:var(--stamp);font-family:var(--kai);font-size:13px;margin-left:10px;transform:rotate(-12deg);vertical-align:middle;opacity:.85}
+.pb-foot{font-size:13.5px;color:var(--muted);padding:12px 96px 0 0}
+.seal{position:absolute;right:26px;bottom:-22px;width:76px;height:76px;border:2.5px solid var(--stamp);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--stamp);font-family:var(--kai);font-weight:700;font-size:18px;line-height:1.15;text-align:center;letter-spacing:.1em;background:var(--sheet);transform:rotate(-10deg);opacity:.88;pointer-events:none}
 @media (prefers-reduced-motion:no-preference){
-  .seal{animation:press .5s cubic-bezier(.2,.9,.3,1.3) both}
-  .pb-row:nth-child(3) .seal{animation-delay:.15s}.pb-row:nth-child(4) .seal{animation-delay:.3s}
-  .pb-row:nth-child(5) .seal{animation-delay:.45s}.pb-row:nth-child(6) .seal{animation-delay:.6s}
-  .pb-row:nth-child(7) .seal{animation-delay:.75s}
-  @keyframes press{from{transform:rotate(-12deg) scale(1.8);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:.85}}
+  .seal{animation:press .7s cubic-bezier(.16,1,.3,1) .4s both}
+  @keyframes press{from{transform:rotate(-10deg) scale(1.25);opacity:.35}to{transform:rotate(-10deg) scale(1);opacity:.88}}
 }
 
 /* 區塊 */
 .sec{padding:56px 0;border-top:1px solid var(--line)}
-.sec>h2{font-size:30px}
+.sec>h2,.sec>h1{font-size:30px}
 .sec .lead{color:var(--muted);margin:8px 0 28px;max-width:var(--measure)}
 
 /* 故事目錄 */
 .toc{list-style:none;margin:0;padding:0;max-width:880px}
 .toc li a{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:4px 24px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .toc .yr{font-family:var(--kai);color:var(--muted);font-size:17px;padding-top:3px}
-.toc h3{font-size:24px}
+.toc .toc-t{font-family:var(--kai);font-size:24px;font-weight:700;line-height:1.35;margin:0;text-wrap:balance}
 .toc p{margin:2px 0 0;color:var(--muted);font-size:15.5px}
-.toc li a:hover h3{color:var(--indigo);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
-.toc .era{font-family:var(--kai);font-size:16px;color:var(--stamp);padding:30px 0 8px;letter-spacing:.1em}
-.toc .era:first-child{padding-top:0}
-.toc .era+li a{border-top:1px solid var(--line)}
+.toc li a:hover .toc-t{color:var(--indigo);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.toc-group{margin:0 0 40px;max-width:880px}
+.toc-group>h3{font-size:19px;color:var(--muted);font-weight:400;margin:0 0 10px}
+.toc li:first-child a{border-top:1px solid var(--line)}
 
 /* 時間軸 */
 .tl-box{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
@@ -83,6 +85,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .tl-end span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:13px;color:var(--stamp);font-family:var(--kai)}
 .tl-year{position:absolute;top:80px;transform:translateX(-50%);font-size:13px;color:var(--muted);font-family:var(--kai)}
 .tl-ev{position:absolute;transform:translate(-50%,0);width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);background:var(--sheet);cursor:pointer;padding:0}
+.tl-ev::after{content:"";position:absolute;inset:-9px}
 .tl-ev.post{border-color:var(--indigo)}
 .tl-ev:hover,.tl-ev.on{background:var(--stamp);border-color:var(--stamp)}
 .tl-detail{display:grid;grid-template-columns:7.5em minmax(0,1fr) auto;gap:4px 24px;align-items:start;border-top:1px solid var(--line);padding:20px 0 0;margin-top:14px;max-width:880px;min-height:120px}
@@ -140,7 +143,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .md h2{font-size:24px;margin:40px 0 10px}
 .md p,.md li{font-size:17px}
 .md li{margin:4px 0}
-.md blockquote{margin:16px 0;padding:2px 0 2px 18px;border-left:3px solid var(--stamp);font-family:var(--kai);font-size:18px}
+.md blockquote{margin:18px 0 18px 2em;padding:0;font-family:var(--kai);font-size:18.5px;color:var(--ink)}
 .md table{border-collapse:collapse;width:100%;font-size:15px}
 .md td,.md th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
 .md .chart{margin:20px 0 28px}
@@ -149,7 +152,7 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .ref.e,.ref.t{font-size:1em;white-space:normal}
 .ref.broken{color:var(--stamp)}
 aside .box{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--line);font-size:15px}
-aside .box h4{font-family:var(--kai);font-size:17px;margin:0 0 8px;font-weight:700}
+aside .box h2{font-family:var(--kai);font-size:17px;margin:0 0 8px;font-weight:700}
 aside .box a{display:block;padding:3px 0;text-decoration:none}
 aside .box a:hover{text-decoration:underline}
 aside dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
