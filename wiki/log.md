@@ -1,0 +1,21 @@
+# 工作紀錄（log）
+
+> 只往下加，不改舊的。格式見 CLAUDE.md 第 7 節。查最近 5 筆：`grep "^## \[" wiki/log.md | tail -5`
+
+## [2026-11-15] rule | 建立 CLAUDE.md、模板、build.py、lint.py
+- 依 Karpathy LLM Wiki 架構：raw（不公開）→ wiki（AI 維護）→ docs（網站）
+- 三種工作流程：ingest、query、lint
+
+## [2026-11-15] ingest | 餐桌上的戰爭（曾品滄 2017）
+- 新增：s-2017-tseng-table-war；主題 t-rice-ration、t-unequal-ration、t-pork-and-sides、t-substitute-food、t-black-market、t-evacuation；名詞 e-economic-police、e-mobilization-law、e-price-control、e-hokohan、e-kokugo-family
+- 更新：timeline（+15）、stats（+5）、places（+14）、debates（+2）
+- 發現：臺北豬肉以戶為單位配給，換算後臺灣人每人只拿到日本人的約 77%
+
+## [2026-11-15] site | 建立網站：首頁九個區塊、單頁、資料庫頁、關於頁
+
+## [2026-11-15] ingest | 第一批公開資料：5 個 Haiku 平行蒐集 21 份
+- 新增資料卡：米穀統制 5、豬肉與副食 4、黑市與動員 3、疏開與空襲 5、戰後米荒與通膨 4
+- 新增主題：t-postwar-famine、t-inflation；名詞：e-hokokai；新增總論 overview
+- 更新：t-rice-ration、t-pork-and-sides、t-substitute-food、t-evacuation；timeline（+10）、stats（+3）、places（+2）、debates（+2）
+- 抽查修正：s-2023 那篇其實是吳聰敏的書摘，不是記者報導（改作者、改 id）；arXiv 的 42.67 元出自翁嘉禧，不是官方統計
+- 移除：s-2012-chen-provincial-evacuation（1955 年，超出時期且與糧食無關；raw 剪存保留）

@@ -1,0 +1,62 @@
+[
+ {
+  "question": "黑市為什麼這麼多？",
+  "topic": "t-black-market",
+  "positions": [
+   {
+    "claim": "殖民官員與經濟警察：臺灣人缺乏法治觀念與決戰精神、貪圖利益，加上處罰太輕。",
+    "source": "s-2017-tseng-table-war"
+   },
+   {
+    "claim": "曾品滄：公定價格壓得太低、配給又不足不公，對生產者來說偷賣是求生之道。",
+    "source": "s-2017-tseng-table-war"
+   }
+  ]
+ },
+ {
+  "question": "戰爭中的臺灣人，只是被動員的一方嗎？",
+  "topic": "t-evacuation",
+  "positions": [
+   {
+    "claim": "多數既有研究（如近藤正己，據曾品滄的整理）：臺灣人主要是被動員、被改造的對象，沒有具體的反抗行動。",
+    "source": "s-2017-tseng-table-war"
+   },
+   {
+    "claim": "曾品滄：臺灣人掌握食物生產，透過黑市與在地生活方式，實際動搖了差別待遇的殖民社會。",
+    "source": "s-2017-tseng-table-war"
+   }
+  ]
+ },
+ {
+  "question": "戰後米荒是誰造成的？",
+  "topic": "t-postwar-famine",
+  "positions": [
+   {
+    "claim": "蘇瑤崇：天災與戰爭造成結構性缺糧；戰後撤除管制、封存存米，米價才暴漲。",
+    "source": "s-2014-su-postwar-rice"
+   },
+   {
+    "claim": "吳聰敏：價格管制的後果。收購價太低，農民不交糧、米商有米也不賣。",
+    "source": "s-2023-wu-rice-shortage-excerpt"
+   },
+   {
+    "claim": "陳懷德、楊海亮：逐月米價分析顯示，政策體系是危機的主導因素（預印本）。",
+    "source": "s-2025-chen-rice-price-1945-1947"
+   }
+  ]
+ },
+ {
+  "question": "戰後通膨的主因是什麼？",
+  "topic": "t-inflation",
+  "positions": [
+   {
+    "claim": "吳聰敏：臺灣銀行貸款給公營事業，以及印鈔融通政府赤字。",
+    "source": "s-2006-wu-taiwan-hyperinflation"
+   },
+   {
+    "claim": "賈忠偉（評論）：生產減少、大陸人口移入、臺幣與法幣固定匯率。",
+    "source": "s-2021-jia-currency-reform-1949"
+   }
+  ]
+ }
+]

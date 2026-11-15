@@ -1,0 +1,130 @@
+[
+ {
+  "name": "艋舺龍山寺前廣場",
+  "lat": 25.0371,
+  "lng": 121.4999,
+  "desc": "全臺最有名的黑市：白天賣菜肉魚米，晚上烤肉飄香；警察一來攤販立刻散光。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "大稻埕永樂市場",
+  "lat": 25.056,
+  "lng": 121.5098,
+  "desc": "1942 年警察突襲，查獲 25 件蔬菜黑市、1 萬多斤蔬菜。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "圓山（士林往臺北的路口）",
+  "lat": 25.0717,
+  "lng": 121.5203,
+  "desc": "士林農民偷運農產品進臺北必經之處，市場員工在這裡攔截。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "土城",
+  "lat": 24.9725,
+  "lng": 121.4434,
+  "desc": "大稻埕的小學老師陳勤缺米，跟親戚到這裡向農家買米。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "新竹南寮",
+  "lat": 24.8466,
+  "lng": 120.9306,
+  "desc": "幼稚園老師劉玉英拿舊衣服跟南寮、香山的漁民換鮮魚。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "新竹市",
+  "lat": 24.8039,
+  "lng": 120.9647,
+  "desc": "1940 年 3 月把米配給減成每天 2 合 2 勺；黃旺成的妻子常排隊一整天買不到魚。",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "屏東市",
+  "lat": 22.6727,
+  "lng": 120.488,
+  "desc": "向來產米的屏東，1940 年 4 月每人每天只配 1 合 7 勺。",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "臺中霧峰",
+  "lat": 24.0617,
+  "lng": 120.7003,
+  "desc": "林獻堂 1941 年在日記中寫：配給米減兩成，非用番薯代替不可。",
+  "topic": "t-substitute-food",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "高雄苓雅寮",
+  "lat": 22.6205,
+  "lng": 120.313,
+  "desc": "區會把豬肉配給分甲乙：日本人拿精肉，臺灣人拿油脂、內臟、耳鼻腳。",
+  "topic": "t-unequal-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "桃園大溪",
+  "lat": 24.8806,
+  "lng": 121.2867,
+  "desc": "醫師陳五福從臺北疏開到這裡，覺得鄉下有雞有蛋有菜，比臺北好過。",
+  "topic": "t-evacuation",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "嘉義民雄",
+  "lat": 23.5513,
+  "lng": 120.4285,
+  "desc": "台北帝大學生佳山良正疏開到此，學種空心菜、炒蝸牛、喝米酒。",
+  "topic": "t-evacuation",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "南投雙冬",
+  "lat": 23.988,
+  "lng": 120.79,
+  "desc": "臺北女子師範學生疏散到這裡；農民陳阿乾說要把土地分給老師。",
+  "topic": "t-evacuation",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "臺南佳里",
+  "lat": 23.165,
+  "lng": 120.177,
+  "desc": "醫生吳新榮的家鄉，他的日記記下了「住都市的人變成採購部隊」。",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "臺中頭汴坑",
+  "lat": 24.11,
+  "lng": 120.76,
+  "desc": "謝雪紅與楊克煌躲空襲搬進山裡，買不起黑市米，只能吃自種的樹薯。",
+  "topic": "t-substitute-food",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "name": "臺南市區（韓石泉診所）",
+  "lat": 22.9946,
+  "lng": 120.201,
+  "desc": "1945 年 3 月 1 日臺南大空襲，韓石泉的診所一夜被毀，全家疏散到郊外。",
+  "topic": "t-evacuation",
+  "source": "s-2020-ohora-tainan-raid"
+ },
+ {
+  "name": "臺北城內（今總統府一帶）",
+  "lat": 25.04,
+  "lng": 121.5119,
+  "desc": "1945 年 5 月 31 日臺北大空襲，政府街區大部分被毀，總督府一翼被炸。",
+  "topic": "t-evacuation",
+  "source": "s-2025-thomas-taipei-raid"
+ }
+]

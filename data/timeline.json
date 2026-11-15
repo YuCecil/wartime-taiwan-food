@@ -1,0 +1,202 @@
+[
+ {
+  "date": "1937-07",
+  "title": "中日戰爭爆發",
+  "desc": "戰爭開始擴大，日本帝國開始徵集人力與物資。",
+  "category": "制度",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1938-04",
+  "title": "國家總動員法公布",
+  "desc": "政府可以用命令管制物資的生產、流通與價格，5 月起逐步實施。",
+  "category": "制度",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1938-09",
+  "title": "經濟警察上路",
+  "desc": "警務局設經濟保安掛，225 名經濟警察開始查緝黑市。",
+  "category": "市場",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1939-09-18",
+  "title": "物價凍結：九一八價格",
+  "desc": "價格停止令規定商品不得高於當天的價格販賣。",
+  "category": "制度",
+  "topic": "t-pork-and-sides",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1940",
+  "title": "米開始由政府分配",
+  "desc": "從第一期稻作起實施米穀配給統制，農民收成要先「供出」給政府。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1940-03",
+  "title": "新竹市減少米配給",
+  "desc": "一般人從每天 2 合 5 勺減為 2 合 2 勺；4 月澎湖、屏東也跟進減配。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1940-04",
+  "title": "食物有了「公定價格」",
+  "desc": "依價格等統制令，蛋、肉、鮮魚等食品統一訂價。",
+  "category": "制度",
+  "topic": "t-pork-and-sides",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1940-12",
+  "title": "臺北砂糖、木炭分等配給",
+  "desc": "日本人與一般臺灣人拿到的量差了 2 到 4 倍。",
+  "category": "制度",
+  "topic": "t-unequal-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1941-04",
+  "title": "豬肉也要配給了",
+  "desc": "生活必需物資統制令與肉豚配給統制規則公布，飲食全面配給化。",
+  "category": "副食",
+  "topic": "t-pork-and-sides",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1941-05",
+  "title": "臺北：十天 300 公克豬肉",
+  "desc": "以戶為單位、分 10 區輪流配給，臺灣人家庭人口多、每人分得更少。",
+  "category": "副食",
+  "topic": "t-unequal-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1942",
+  "title": "米配給改用重量計算",
+  "desc": "依工作輕重分級：重勞動者 520 公克、一般成年人 330 公克。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1943",
+  "title": "美軍空襲開始，城市居民疏開",
+  "desc": "城裡人疏散到鄉下，日本人開始依靠臺灣農家生活。",
+  "category": "生活",
+  "topic": "t-evacuation",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1943-08",
+  "title": "中元節前私宰潮",
+  "desc": "人們急需祭祀用豬肉，臺北北署三天抓到 85 件私宰。",
+  "category": "副食",
+  "topic": "t-pork-and-sides",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1944",
+  "title": "全島經濟犯罪 34,991 件",
+  "desc": "平均每天近百件，最多的是違反價格統制。",
+  "category": "市場",
+  "topic": "t-black-market",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1945",
+  "title": "米配給標準再調降",
+  "desc": "主食配給有時被換成砂糖和香蕉乾，日本人也吃不飽。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2017-tseng-table-war"
+ },
+ {
+  "date": "1939",
+  "title": "朝鮮大旱，帝國米倉出問題",
+  "desc": "日本主要米源朝鮮減產，迫使帝國調整糧食政策。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2009-li-grain-regulation"
+ },
+ {
+  "date": "1943-12",
+  "title": "建物疎開開始",
+  "desc": "拆除部分建築、留出防火空地，但初期推動緩慢。",
+  "category": "生活",
+  "topic": "t-evacuation",
+  "source": "s-2024-takada-building-evacuation"
+ },
+ {
+  "date": "1945-03-01",
+  "title": "臺南大空襲",
+  "desc": "醫師韓石泉的診所一夜被毀，全家連夜疏散到郊外。",
+  "category": "生活",
+  "topic": "t-evacuation",
+  "source": "s-2020-ohora-tainan-raid"
+ },
+ {
+  "date": "1945-04",
+  "title": "臺北擴大建物疎開",
+  "desc": "空襲風險升高，臺北大幅擴大拆除範圍。",
+  "category": "生活",
+  "topic": "t-evacuation",
+  "source": "s-2024-takada-building-evacuation"
+ },
+ {
+  "date": "1945-05-31",
+  "title": "臺北大空襲",
+  "desc": "約三小時投下約 3,000 枚炸彈，報導估計約 3,000 人死亡。",
+  "category": "生活",
+  "topic": "t-evacuation",
+  "source": "s-2025-thomas-taipei-raid"
+ },
+ {
+  "date": "1945-11",
+  "title": "收購價不到市價三分之一",
+  "desc": "長官公署徵購糙米每百公斤 132.8 元，市場上可賣到 533 元。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2023-wu-rice-shortage-excerpt"
+ },
+ {
+  "date": "1946",
+  "title": "鈔票越印越多",
+  "desc": "貨幣發行量大增，惡性通膨開始。",
+  "category": "戰後",
+  "topic": "t-inflation",
+  "source": "s-2006-wu-taiwan-hyperinflation"
+ },
+ {
+  "date": "1946-12",
+  "title": "米價一年漲近三倍",
+  "desc": "臺北米價從 1 月每斤 8.26 元漲到 12 月 23.98 元。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2025-chen-rice-price-1945-1947"
+ },
+ {
+  "date": "1947-02",
+  "title": "米價單月暴漲 93.9%",
+  "desc": "2 月 13 日政府公布最高米價 23 元，市面卻喊到 32 元。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2023-wu-rice-shortage-excerpt"
+ },
+ {
+  "date": "1949-06",
+  "title": "四萬元換一元",
+  "desc": "發行新臺幣，舊臺幣 4 萬元換 1 元。",
+  "category": "戰後",
+  "topic": "t-inflation",
+  "source": "s-2021-jia-currency-reform-1949"
+ }
+]
