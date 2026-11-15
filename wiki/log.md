@@ -100,3 +100,13 @@
 - 清掉資料卡裡的本機絕對路徑；CLAUDE.md 補新環境沒有 raw/、範例頁、路由、禁止清單例外
 - 網站：關係網函式庫改成進該頁才載入、找不到頁面提示、aria-current、跳過連結、重按「故事」會捲動、時間軸篩選保留焦點、首屏圖不延遲載入
 - templates/topic.md 補 image、chart、img 範例；/new-topic 寫明缺插圖也算完成
+
+## [2026-11-15] lint | 內容審查修正
+- t-evacuation、timeline：建物疎開時間改照原文（日本本土 1943-12 閣議決定；臺灣 1944-04 宣布不採用、1944-08-23 決定推行）；summary 與一句話拿掉「第一次同桌吃飯」，「五十年來」改成曾品滄的說法；sources 補 s-1996-kondo-total-war；資料卡 s-2024-takada-building-evacuation 同步改正
+- t-postwar-famine、timeline：32 元（2/13《民報》）與 40 元（2/14、2/25）寫清日期出處；93.9% 註明是吳聰敏的數字、與官方月報算出的約 65% 不同；1 月米價統一為 8.43（作者加權修正值）；sources 補 s-2009-li-grain-regulation
+- t-pork-and-sides：統制令 4 月、豬肉定價夏季分開寫；summary 與一句話拿掉「最熱門／最搶手」
+- t-rice-ration、timeline：米穀納入組合兩說並陳附頁碼；「多了將近 100 萬石」改為原文數字約 106 萬石、「要求」改「規劃」
+- t-black-market：「賣家幾乎都是臺灣人」改為被查獲者幾乎都是臺灣人（3,000 多件中日籍 9 人）；豬肉配給案件句改寫；stats 圖 econ-crime-1941-1944 標題改為符合內容
+- 內文插圖說明（t-evacuation、t-black-market、t-postwar-famine、t-rice-ration）拿掉原文沒有的細節
+- timeline 7 筆 category 改成與其 topic 頁一致；t-inflation 的（推論）移到句首
+- 補曾品滄（s-2017-tseng-table-war）引用頁碼：各主題頁、實體頁、overview

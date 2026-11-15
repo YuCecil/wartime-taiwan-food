@@ -8,7 +8,7 @@ period: [1945, 1947]
 summary: 終戰後一斤米從 1.9 元漲到 71 元，臺灣人反而買不起米。
 image: t-postwar-famine.jpg
 imageAlt: 木刻版畫風插畫：米店木門緊閉，門前擠滿提著空米袋、神情焦急的人。
-sources: [s-2014-su-postwar-rice, s-2025-chen-rice-price-dataset, s-2025-chen-rice-price-1945-1947, s-2023-wu-rice-shortage-excerpt, s-2018-tseng-public-diet, s-2016-huang-wartime-agri-policy, s-2019-huang-irrigation-farm-org]
+sources: [s-2014-su-postwar-rice, s-2009-li-grain-regulation, s-2025-chen-rice-price-dataset, s-2025-chen-rice-price-1945-1947, s-2023-wu-rice-shortage-excerpt, s-2018-tseng-public-diet, s-2016-huang-wartime-agri-policy, s-2019-huang-irrigation-farm-org]
 updated: 2026-11-15
 ---
 
@@ -28,11 +28,11 @@ updated: 2026-11-15
 
 封存的米去了哪裡？霧峰的林獻堂在日記裡記下，1946 年 3 月有人要從臺中縣調走 4,000 噸米；3 月 14 日，霧峰農業會的 2,000 多包存米被搬得一空（[[s-2014-su-postwar-rice]] 頁 123–124）。
 
-{{img:t-postwar-famine-2.jpg|農會倉庫裡的存米，被一車一車拉走。}}
+{{img:t-postwar-famine-2.jpg|霧峰農業會倉庫裡的 2,000 多包存米，1946 年 3 月 14 日被搬得一空。}}
 
 至於「米被運去中國」的說法，蘇瑤崇查了檔案：救濟總署確實曾想把臺灣米運出去，但長官公署農林處回覆「實無餘糧可資出口」，軍方要買 15 萬大包也被擋下；反倒是福建答應送來 20 萬石米，最後只到了 4,844 石（[[s-2014-su-postwar-rice]] 頁 106–111、126）。
 
-米價在 1947 年初失控。官方月報記錄的臺北蓬萊米，1946 年 12 月每斤 23.98 元，1947 年 2 月 42.22 元，4 月 71.11 元（[[s-2025-chen-rice-price-dataset]]）。1947 年 2 月 13 日政府公布最高米價，臺北蓬萊米限 23 元，結果米店乾脆關門，黑市喊到每斤 40 元（[[s-2023-wu-rice-shortage-excerpt]]）。兩週後，二二八事件爆發。
+米價在 1947 年初失控。官方月報記錄的臺北蓬萊米，1946 年 12 月每斤 23.98 元，1947 年 2 月 42.22 元，4 月 71.11 元（[[s-2025-chen-rice-price-dataset]]）。2 月 13 日《民報》報導市面米價已經喊到 32 元；同一天政府公布最高米價，臺北蓬萊米限 23 元。限價之後米店乾脆關門：2 月 14 日《民報》頭條說市面無米可賣，只聽說暗市有一斤 40 元的；2 月 25 日報導新竹米攤與米店全都關門，暗市喊到 40 元左右（[[s-2023-wu-rice-shortage-excerpt]] 段 39–42）。吳聰敏文中還寫 2 月米價比 1 月漲 93.9%，但沒有註明出處；用官方月報 1 月 25.57 元、2 月 42.22 元來算，約漲 65%（本站計算），兩者口徑可能不同（[[s-2023-wu-rice-shortage-excerpt]] 段 43；[[s-2025-chen-rice-price-dataset]]）。兩週後，二二八事件爆發。
 
 ## 數字會說話
 

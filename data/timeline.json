@@ -3,7 +3,7 @@
   "date": "1937-07",
   "title": "中日戰爭爆發",
   "desc": "戰爭開始擴大，日本帝國開始徵集人力與物資。",
-  "category": "制度",
+  "category": "主食",
   "topic": "t-rice-ration",
   "source": "s-2017-tseng-table-war"
  },
@@ -11,7 +11,7 @@
   "date": "1938-04",
   "title": "國家總動員法公布",
   "desc": "政府可以用命令管制物資的生產、流通與價格，5 月起逐步實施。",
-  "category": "制度",
+  "category": "主食",
   "topic": "t-rice-ration",
   "source": "s-2017-tseng-table-war"
  },
@@ -27,7 +27,7 @@
   "date": "1939-09-18",
   "title": "物價凍結：九一八價格",
   "desc": "價格停止令規定商品不得高於當天的價格販賣。",
-  "category": "制度",
+  "category": "副食",
   "topic": "t-pork-and-sides",
   "source": "s-2017-tseng-table-war"
  },
@@ -51,7 +51,7 @@
   "date": "1940-04",
   "title": "食物有了「公定價格」",
   "desc": "依價格等統制令，蛋、肉、鮮魚等食品統一訂價。",
-  "category": "制度",
+  "category": "副食",
   "topic": "t-pork-and-sides",
   "source": "s-2017-tseng-table-war"
  },
@@ -75,7 +75,7 @@
   "date": "1941-05",
   "title": "臺北：十天 300 公克豬肉",
   "desc": "以戶為單位、分 10 區輪流配給，臺灣人家庭人口多、每人分得更少。",
-  "category": "副食",
+  "category": "制度",
   "topic": "t-unequal-ration",
   "source": "s-2017-tseng-table-war"
  },
@@ -128,9 +128,9 @@
   "source": "s-2009-li-grain-regulation"
  },
  {
-  "date": "1943-12",
-  "title": "建物疎開開始",
-  "desc": "拆除部分建築、留出防火空地，但初期推動緩慢。",
+  "date": "1944-08-23",
+  "title": "臺灣決定推行建物疎開",
+  "desc": "拆除部分建築、留出防火空地。日本本土 1943 年 12 月已決定辦理；臺灣 1944 年 4 月宣布不採用，8 月 23 日防空協議會才改變決定。",
   "category": "生活",
   "topic": "t-evacuation",
   "source": "s-2024-takada-building-evacuation"
@@ -178,15 +178,15 @@
  {
   "date": "1946-12",
   "title": "米價一年漲近三倍",
-  "desc": "臺北米價從 1 月每斤 8.26 元漲到 12 月 23.98 元。",
+  "desc": "臺北蓬萊米從 1 月每斤約 8.43 元（作者加權修正值，與圖表一致）漲到 12 月 23.98 元。",
   "category": "戰後",
   "topic": "t-postwar-famine",
   "source": "s-2025-chen-rice-price-dataset"
  },
  {
   "date": "1947-02",
-  "title": "米價單月暴漲 93.9%",
-  "desc": "2 月 13 日政府公布最高米價 23 元，市面卻喊到 32 元。",
+  "title": "2 月米價大漲，限價後米店關門",
+  "desc": "2 月 13 日《民報》報導市面喊到 32 元，同日政府公布最高價 23 元；2 月 14 日《民報》報導暗市有一斤 40 元的，市面卻買不到米。吳聰敏文中的月漲幅 93.9%（未註明出處）與官方月報算出的約 65%（25.57 元到 42.22 元，本站計算）不同。",
   "category": "戰後",
   "topic": "t-postwar-famine",
   "source": "s-2023-wu-rice-shortage-excerpt"
@@ -201,8 +201,8 @@
  },
  {
   "date": "1940",
-  "title": "臺灣被要求運出 500 萬石米",
-  "desc": "朝鮮大旱後，日本把米的來源轉向臺灣，要求的移出量比前一年多出約 100 萬石。",
+  "title": "日本規劃由臺灣移出 500 萬石米",
+  "desc": "朝鮮大旱後，日本把米的來源轉向臺灣：1940 年規劃移出 500 萬石，比 1939 年的 393 萬石多約 106 萬石。",
   "category": "主食",
   "topic": "t-rice-ration",
   "source": "s-2009-li-grain-regulation"
@@ -211,7 +211,7 @@
   "date": "1943-12-29",
   "title": "臺灣食糧管理令公布",
   "desc": "主要糧食由政府收購，委由各地農業會辦理。",
-  "category": "制度",
+  "category": "主食",
   "topic": "t-rice-ration",
   "source": "s-2019-huang-irrigation-farm-org"
  },
@@ -307,7 +307,7 @@
   "date": "1939-10-31",
   "title": "節米勅令案送交總動員審議會",
   "desc": "報紙報導節米的勅令草案（依國家總動員法第八條）送交審議。",
-  "category": "制度",
+  "category": "主食",
   "topic": "t-rice-ration",
   "source": "s-1939-tnn-setsumai"
  },
