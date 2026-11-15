@@ -85,6 +85,12 @@ h1,h2,h3{font-family:var(--kai);font-weight:700;line-height:1.35;margin:0}
 .art.band img{aspect-ratio:3/1;object-position:50% 58%}
 .art.lead-art{margin:6px 0 10px}
 
+/* 吉祥物「番薯仔」：只出現在首頁開場、關於頁、404（CLAUDE.md 8.3） */
+.mascot{display:block;height:auto;pointer-events:none;user-select:none}
+.mascot-hero{width:150px;margin:34px 0 0 6px}
+.about-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.mascot-about{width:96px;flex:none;margin-bottom:-6px}
+
 /* 區塊 */
 .sec{padding:56px 0;border-top:1px solid var(--line)}
 .sec>h2,.sec>h1{font-size:30px}
@@ -243,6 +249,8 @@ aside dd{margin:0}
   .page{padding-top:28px}
   .page-h h1{font-size:30px}
   .art.band img{aspect-ratio:2/1}
+  .mascot-hero{width:110px;margin-top:22px}
+  .mascot-about{width:72px}
 }
 @media (max-width:560px){
   body{font-size:16.5px}

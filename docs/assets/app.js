@@ -118,6 +118,7 @@ function home(anchor) {
       <h1>戰爭，是從<br>餐桌開始的。</h1>
       <p class="intro">1937 到 1949 年，臺灣人吃的米要配給，豬肉十天才分到一次，黑市就藏在龍山寺前。這裡把 ${c.sources} 份研究與史料交給 AI 讀完，整理成 ${c.topics} 個故事，每一句話都標出處。</p>
       <a class="go" href="#/#stories">從故事開始讀</a>
+      <img class="mascot mascot-hero" src="assets/img/mascot.png" alt="番薯仔：戴斗笠、提竹籃的番薯，本站的導覽員" width="382" height="520">
     </div>
     <div class="passbook" aria-label="以配給簿形式整理的六個關鍵數字">
       <div class="pb-head"><b>米穀通帳</b><span>本站整理，非原件</span></div>
@@ -308,7 +309,7 @@ function library() {
 function about() {
   setNav("about");
   const ov = byId["overview"];
-  app.innerHTML = `<section class="sec reading" style="border:0"><h1>這個網站怎麼做的</h1>
+  app.innerHTML = `<section class="sec reading" style="border:0"><div class="about-h"><h1>這個網站怎麼做的</h1><img class="mascot mascot-about" src="assets/img/mascot.png" alt="" aria-hidden="true" width="382" height="520"></div>
   <p class="lead">研究論文多到人讀不完，所以讓 AI 讀，人負責找資料和提問。這個做法叫 LLM Wiki，概念來自 Andrej Karpathy。</p>
   <ol class="flow">
     <li><span><b>收集原始資料</b><br>論文、報紙、統計放在 raw 資料夾。原文有著作權，不公開。</span></li>
@@ -325,7 +326,6 @@ function about() {
     <tr><td><code>/ask 問題</code></td><td>用網站裡的資料回答問題，好的回答會存成新頁面。</td></tr>
     <tr><td><code>/wiki-lint</code></td><td>健檢整個網站，並列出下一批該找的資料。</td></tr>
   </tbody></table>
-  <p class="small">本站插圖由 AI（Gemini）依史料描述的情境繪製，不是歷史照片。</p>
   <p class="small">換一個題目也能用：把 CLAUDE.md 第 1 節（目的與時期）和第 8 節（風格）換掉，其餘的流程、工具、網站程式都可以照搬。</p>
   ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為 <i style="font-style:normal;color:var(--indigo)">ingest</i> 的每一筆，都是照這些指令新增的內容。</p>` : ""; })()}
   ${ov ? `<h2 style="margin-top:48px">總論：目前我們知道什麼</h2><article class="md">${renderMd(ov.body)}</article>` : ""}

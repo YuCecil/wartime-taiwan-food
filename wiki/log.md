@@ -69,3 +69,7 @@
 ## [2026-11-15] rule | CLAUDE.md 新增 8.2「插圖」；frontmatter 新增 image／imageAlt；新增 templates/illustration-prompt.md；/new-topic 加入插圖步驟
 
 ## [2026-11-15] site | 依使用者要求拿掉每張插圖下的 AI 備註，改在「關於」頁統一註明
+
+## [2026-11-15] site | 加入吉祥物「番薯仔」（斗笠、藍色臺灣衫、竹籃）：首頁開場、關於頁、404；拿掉關於頁的 AI 插圖說明
+
+## [2026-11-15] rule | CLAUDE.md 新增 8.3「吉祥物」；8.2 改為不加 AI 備註
