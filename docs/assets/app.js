@@ -307,6 +307,7 @@ function library() {
   </tbody></table></div></section>`;
   scrollTo(0, 0);
 }
+const LOG_KIND = { ingest: "新資料", rule: "規則", site: "網站", lint: "健檢", query: "問答" };
 function about() {
   setNav("about");
   const ov = byId["overview"];
@@ -329,9 +330,9 @@ function about() {
   </tbody></table>
   <p>想看資料卡、故事、名詞之間怎麼互相連結，可以打開<a href="#/graph">關係網</a>。</p>
   <p class="small">換一個題目也能用：把 CLAUDE.md 第 1 節（目的與時期）和第 8 節（風格）換掉，其餘的流程、工具、網站程式都可以照搬。</p>
-  ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為 <i style="font-style:normal;color:var(--indigo)">ingest</i> 的每一筆，都是照這些指令新增的內容。</p>` : ""; })()}
+  ${(() => { const demos = (W.log || []).filter(l => /新主題|示範|new-topic|ingest/.test(l.title) && l.kind === "ingest"); return demos.length ? `<p>下面的「更新紀錄」裡，標為「新資料」的，就是照這套流程加進來的內容。</p>` : ""; })()}
   ${ov ? `<h2 style="margin-top:48px">總論：目前我們知道什麼</h2><article class="md">${renderMd(ov.body)}</article>` : ""}
-  ${W.log?.length ? `<h2 style="margin-top:48px">更新紀錄</h2><div style="margin-top:14px">${W.log.slice().reverse().map(l => `<div class="log-row"><b>${esc(l.date)}</b><i>${esc(l.kind)}</i><span>${esc(l.title)}</span></div>`).join("")}</div>` : ""}
+  ${W.log?.length ? `<h2 style="margin-top:48px">更新紀錄</h2><div style="margin-top:14px">${W.log.slice().reverse().map(l => `<div class="log-row"><b>${esc(l.date)}</b><i>${esc(LOG_KIND[l.kind] || l.kind)}</i><span>${esc(l.title)}</span></div>`).join("")}</div>` : ""}
   </section>`;
   scrollTo(0, 0);
 }
