@@ -138,7 +138,7 @@
  {
   "date": "1945-03-01",
   "title": "臺南大空襲",
-  "desc": "醫師韓石泉的診所一夜被毀，全家連夜疏散到郊外。",
+  "desc": "醫師韓石泉的醫院一夜被毀，長女在空襲中喪生，全家連夜徒步疏散到郊外。",
   "category": "生活",
   "topic": "t-evacuation",
   "source": "s-2020-ohora-tainan-raid"
@@ -160,12 +160,12 @@
   "source": "s-2025-thomas-taipei-raid"
  },
  {
-  "date": "1945-11",
-  "title": "收購價不到市價三分之一",
-  "desc": "長官公署徵購糙米每百公斤 132.8 元，市場上可賣到 533 元。",
+  "date": "1945-12",
+  "title": "黑市米價是官價的五六倍",
+  "desc": "官定米價每臺斤 1 元，黑市已經喊到 5.5 到 6 元。",
   "category": "戰後",
   "topic": "t-postwar-famine",
-  "source": "s-2023-wu-rice-shortage-excerpt"
+  "source": "s-2014-su-postwar-rice"
  },
  {
   "date": "1946",
@@ -181,7 +181,7 @@
   "desc": "臺北米價從 1 月每斤 8.26 元漲到 12 月 23.98 元。",
   "category": "戰後",
   "topic": "t-postwar-famine",
-  "source": "s-2025-chen-rice-price-1945-1947"
+  "source": "s-2025-chen-rice-price-dataset"
  },
  {
   "date": "1947-02",
@@ -192,11 +192,83 @@
   "source": "s-2023-wu-rice-shortage-excerpt"
  },
  {
-  "date": "1949-06",
+  "date": "1949-06-15",
   "title": "四萬元換一元",
-  "desc": "發行新臺幣，舊臺幣 4 萬元換 1 元。",
+  "desc": "實施幣制改革，發行新臺幣，發行上限 2 億元；舊臺幣 4 萬元換 1 元。",
   "category": "戰後",
   "topic": "t-inflation",
-  "source": "s-2021-jia-currency-reform-1949"
+  "source": "s-2006-wu-taiwan-hyperinflation"
+ },
+ {
+  "date": "1940",
+  "title": "臺灣被要求運出 500 萬石米",
+  "desc": "朝鮮大旱後，日本把米的來源轉向臺灣，要求的移出量比前一年多出約 100 萬石。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2009-li-grain-regulation"
+ },
+ {
+  "date": "1943-12-29",
+  "title": "臺灣食糧管理令公布",
+  "desc": "主要糧食由政府收購，委由各地農業會辦理。",
+  "category": "制度",
+  "topic": "t-rice-ration",
+  "source": "s-2019-huang-irrigation-farm-org"
+ },
+ {
+  "date": "1944",
+  "title": "米的供出率達 85%",
+  "desc": "臺灣農民收成的米八成五交給政府，比朝鮮、日本本土都高。",
+  "category": "主食",
+  "topic": "t-rice-ration",
+  "source": "s-2009-li-grain-regulation"
+ },
+ {
+  "date": "1945-08",
+  "title": "終戰：物價一個月漲近五倍",
+  "desc": "躉售物價指數從 7 月底的 242 跳到 8 月底的 1,171.7。",
+  "category": "戰後",
+  "topic": "t-inflation",
+  "source": "s-2006-wu-taiwan-hyperinflation"
+ },
+ {
+  "date": "1945-10-31",
+  "title": "新政府延續米穀管制",
+  "desc": "長官公署頒布「管理糧食臨時辦法」，繼續收購與配給。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2014-su-postwar-rice"
+ },
+ {
+  "date": "1946-01-11",
+  "title": "廢除管制、同時封存存米",
+  "desc": "隔天停止配給、米可自由買賣，但各地倉米被封存，市場上的米反而變少。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2014-su-postwar-rice"
+ },
+ {
+  "date": "1946-03-14",
+  "title": "霧峰農業會存米被搬空",
+  "desc": "2,000 多包存米被調走，林獻堂在日記中留下紀錄。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2014-su-postwar-rice"
+ },
+ {
+  "date": "1946-08",
+  "title": "田賦徵實開始",
+  "desc": "到 12 月徵收約 212 萬石，接近 1945 年總產量的一半。",
+  "category": "戰後",
+  "topic": "t-postwar-famine",
+  "source": "s-2014-su-postwar-rice"
+ },
+ {
+  "date": "1948-08",
+  "title": "臺幣與金圓券固定匯率",
+  "desc": "匯率固定在 1,835 比 1，上海的資金與通膨一起湧進臺灣。",
+  "category": "戰後",
+  "topic": "t-inflation",
+  "source": "s-2006-wu-taiwan-hyperinflation"
  }
 ]

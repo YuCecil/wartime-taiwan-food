@@ -32,7 +32,7 @@
   "topic": "t-postwar-famine",
   "positions": [
    {
-    "claim": "蘇瑤崇：天災與戰爭造成結構性缺糧；戰後撤除管制、封存存米，米價才暴漲。",
+    "claim": "蘇瑤崇：天災與戰爭造成缺糧，但 1946 年 1 月廢除管制的同時封存大量存米、後續搶米調撥，才讓情況惡化；「運米到中國」多屬傳聞。",
     "source": "s-2014-su-postwar-rice"
    },
    {
@@ -50,12 +50,26 @@
   "topic": "t-inflation",
   "positions": [
    {
-    "claim": "吳聰敏：臺灣銀行貸款給公營事業，以及印鈔融通政府赤字。",
+    "claim": "吳聰敏：前期是臺灣銀行放款給公營企業，後期是印鈔替政府赤字融通；1949 年幣制改革沒有改變財政體制，1950 年美援恢復後才穩定。",
     "source": "s-2006-wu-taiwan-hyperinflation"
    },
    {
     "claim": "賈忠偉（評論）：生產減少、大陸人口移入、臺幣與法幣固定匯率。",
     "source": "s-2021-jia-currency-reform-1949"
+   }
+  ]
+ },
+ {
+  "question": "戰後臺灣的米，有被大量運去中國嗎？",
+  "topic": "t-postwar-famine",
+  "positions": [
+   {
+    "claim": "當時民間廣泛流傳：新政府把大量臺米運到中國販售，造成米荒（蘇瑤崇整理的說法）。",
+    "source": "s-2014-su-postwar-rice"
+   },
+   {
+    "claim": "蘇瑤崇：救濟總署與軍方的購米要求都因臺灣缺糧被拒；臺灣米價全中國最貴，私運出口也不划算，此說僅是傳聞。",
+    "source": "s-2014-su-postwar-rice"
    }
   ]
  }

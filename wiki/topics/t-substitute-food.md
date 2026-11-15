@@ -6,7 +6,7 @@ emoji: 🍠
 category: 主食
 period: [1940, 1949]
 summary: 米不夠，就用番薯籤、樹薯粉和田邊的野菜補。
-sources: [s-2017-tseng-table-war, s-2013-tseng-hometown]
+sources: [s-2017-tseng-table-war, s-2009-li-grain-regulation, s-2018-tseng-public-diet, s-2013-tseng-hometown]
 updated: 2026-11-15
 ---
 
@@ -22,7 +22,13 @@ updated: 2026-11-15
 
 被遺忘的鄉土食也回來了：醬瓜、豆豉配飯，田裡的青蛙、魚蝦、豬雞內臟，還有黑甜仔（龍葵）、野莧這些野菜。原本拿來餵豬的茄茉菜，這時大家搶著吃；空心菜好種，市場上滿坑滿谷（[[s-2017-tseng-table-war]]）。
 
+數字也看得出番薯的地位。1944 年，臺灣農民收成的米有 85% 要交給政府，番薯卻只要交 6.28%，大部分留在家裡吃（[[s-2009-li-grain-regulation]] 頁 94）。但整體來說，番薯也不夠：每人每天能分到的番薯，從戰前（1935–39 平均）的 309 公克，降到 1940–44 年的 250 公克、1945 年的 184 公克（[[s-2018-tseng-public-diet]] 頁 125）。
+
 到了 1945 年，連新竹的黃旺成家都在日記裡寫：「米欠三日，晝用樹薯粉，各僅半飽」（[[s-2017-tseng-table-war]]）。
+
+## 數字會說話
+
+{{chart:daily-diet-1935-1946}}
 
 ## 研究者怎麼看
 
@@ -32,6 +38,8 @@ updated: 2026-11-15
 ## 延伸閱讀
 
 - [[s-2017-tseng-table-war]]
+- [[s-2009-li-grain-regulation]]
+- [[s-2018-tseng-public-diet]]
 - [[s-2013-tseng-hometown]]（曾品滄另一篇談戰時「臺灣料理」與鄉土食的研究，本站目前只有書目）
 
 ## 還不知道的事
