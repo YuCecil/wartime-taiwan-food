@@ -1444,6 +1444,11 @@
    "date": "2026-11-15",
    "kind": "site",
    "title": "修正：地圖底圖改用 OpenStreetMap、關係網字級、手機版主題頁溢出、戰後米價改為長條圖（時間間隔不等）"
+  },
+  {
+   "date": "2026-11-15",
+   "kind": "site",
+   "title": "改版「米穀通帳」：紙、藍黑墨水、印泥紅；標題改霞鶩文楷；首頁精簡為通帳、故事目錄、時間軸、地圖；數字、研究爭論、關係網獨立成頁"
   }
  ],
  "timeline": [
@@ -1674,8 +1679,10 @@
    "note": "這是政府訂的「標準量」，實際領到的常常更少。",
    "source": "s-2017-tseng-table-war",
    "big": "330 公克",
-   "bigLabel": "1942 年，一般成年人每天配到的米，大約兩碗飯",
-   "topic": "t-rice-ration"
+   "bigLabel": "一般成年人一天配到的米，大約兩碗飯",
+   "topic": "t-rice-ration",
+   "bigYear": 1942,
+   "highlight": 3
   },
   {
    "id": "rice-local-cut-1940",
@@ -1701,7 +1708,8 @@
    ],
    "note": "1 合約 180 毫升（一般換算，非出自本資料）。地方政府以「節米」為由減配，產米的屏東反而最少。",
    "source": "s-2017-tseng-table-war",
-   "topic": "t-rice-ration"
+   "topic": "t-rice-ration",
+   "highlight": 3
   },
   {
    "id": "unequal-taipei-1940",
@@ -1731,7 +1739,9 @@
    "source": "s-2017-tseng-table-war",
    "big": "25%",
    "bigLabel": "臺北的一般臺灣人，只拿到日本人四分之一的木炭",
-   "topic": "t-unequal-ration"
+   "topic": "t-unequal-ration",
+   "bigYear": 1940,
+   "highlight": 1
   },
   {
    "id": "pork-per-person-1941",
@@ -1756,8 +1766,10 @@
    "note": "1930 年代為每人每天約 35 公克 × 10。1941 年每戶每 10 天 300 公克，除以家庭平均人數（日本人 4.01、臺灣人 5.21）。換算為本站計算。",
    "source": "s-2017-tseng-table-war",
    "big": "57 公克",
-   "bigLabel": "1941 年臺北臺灣人每人每 10 天分到的豬肉，平時一天半就吃完了",
-   "topic": "t-pork-and-sides"
+   "bigLabel": "臺北的臺灣人，每人十天分到的豬肉",
+   "topic": "t-pork-and-sides",
+   "bigYear": 1941,
+   "highlight": 2
   },
   {
    "id": "econ-crime-1944",
@@ -1788,8 +1800,10 @@
    "note": "「其他」三項為本站以總數相減得出。同一事件觸犯多條法令會被算成多件，實際案件較少。",
    "source": "s-2017-tseng-table-war",
    "big": "34,991 件",
-   "bigLabel": "1944 年全島經濟犯罪，平均每天近百件",
-   "topic": "t-black-market"
+   "bigLabel": "全島經濟犯罪件數，平均每天近百件",
+   "topic": "t-black-market",
+   "bigYear": 1944,
+   "highlight": 0
   },
   {
    "id": "postwar-rice-price",
@@ -1815,7 +1829,9 @@
    "source": "s-2025-chen-rice-price-1945-1947",
    "topic": "t-postwar-famine",
    "big": "約 3 倍",
-   "bigLabel": "1946 年一整年，臺北的米價漲了將近三倍"
+   "bigLabel": "一年之內，臺北的米價漲了將近三倍",
+   "bigYear": 1946,
+   "highlight": 2
   },
   {
    "id": "purchase-vs-market-1945",
@@ -1839,7 +1855,8 @@
    ],
    "note": "折算價為吳聰敏由臺北零售白米價格換算；533 元出自駐臺美國情報人員紀錄。",
    "source": "s-2023-wu-rice-shortage-excerpt",
-   "topic": "t-postwar-famine"
+   "topic": "t-postwar-famine",
+   "highlight": 0
   },
   {
    "id": "old-twd-issue",
@@ -1864,8 +1881,10 @@
    "note": "出自評論文章，作者未逐一註明原始出處，待核對。",
    "source": "s-2021-jia-currency-reform-1949",
    "topic": "t-inflation",
-   "big": "4 萬 → 1",
-   "bigLabel": "1949 年，舊臺幣四萬元換新臺幣一元"
+   "big": "4 萬換 1",
+   "bigLabel": "舊臺幣四萬元，只換得到新臺幣一元",
+   "bigYear": 1949,
+   "highlight": 2
   }
  ],
  "places": [
