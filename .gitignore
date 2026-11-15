@@ -1,4 +1,9 @@
 raw/
 .DS_Store
 __pycache__/
-.claude/
+# Impeccable 等工具（本機安裝，不上傳）；只上傳 .claude/commands/ 這些專案指令
+.claude/*
+!.claude/commands/
+# 收件匣裡的原始檔有著作權，不上傳
+inbox/*
+!inbox/.gitkeep
